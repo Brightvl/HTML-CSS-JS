@@ -1,9 +1,107 @@
+body {
+  font-family: sans-serif;
+}
+
 a {
-    text-decoration: none;
+  /*ссылки без подчеркивания */
+  text-decoration: none;
+}
+
+/* : псевдокласс определяет состояние типо выделен */
+/* :: реакция пользователя независимо от обстоятельств*/
+p::selection {
+  color: rgb(123, 12, 34);
+  background-color: rgba(159, 159, 30, 0.5);
+}
+p::first-letter{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(206, 10, 10);
+    flex-direction: underline;
+    
+}
+
+p::first-line{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(175, 116, 35);
+    text-decoration: underline;
+
 }
 
 .menuLinks {
-    color: cornflowerblue;
-    font-size: 16px;
-    line-height: 20px;
+  color: cornflowerblue;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.menuLinks:hover {
+  color: crimson;
+}
+
+.title {
+  color: #222222;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  color: #746c8a;
+}
+
+.subtitle {
+  color: coral;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 80px;
+}
+
+.listFormat::marker {
+  content: "✝ ";
+  font-size: 1.2em;
+}
+
+.image {
+  border-radius: 50%;
+  width: 250px;
+}
+
+/* При наведении */
+.image:hover {
+  /* Размер 110% */
+  transform: scale(1.1);
+  /* размер тени  0.5 прорачность*/
+  box-shadow: 20px 20px 5px 10px rgba(98, 57, 57, 0.5);
+  /* замедление трансформации */
+  transition: transform 700ms, box-shadow 700ms;
+}
+
+.formatInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formatInput {
+  width: 300px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  border: Ipx solid #ccc;
+  border-radius: 10px;
 }
