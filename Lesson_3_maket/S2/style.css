@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  background: var(--020-a-18, #020a18);
+  /* background: var(--020-a-18, #2755a3); */
+  max-width: 1600px;
+  margin: auto;
+  width: 80%;
+}
+
+a {
+  color: var(--ffffff, #fff);
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 20px;
+}
+
+.header {
+  flex-shrink: 0;
+  padding: 20px;
+  text-align: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.top__content {
+  text-align: center;
+  text-justify: center;
+  writing-mode: vertical-lr;
+}
+
+.left__top__container {
+  width: 50%;
+  writing-mode: horizontal-tb;
+  text-align: left;
+  padding: 20px;
+}
+
+.text_top {
+  color: var(--3-a-68-b-8, #3a68b8);
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%; /* 28.8px */
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.title {
+  color: var(--ffffff, #fff);
+  font-family: "Open Sans";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%; /* 71.5px */
+  margin-bottom: 40px;
+}
+
+.text_bottom {
+  color: var(--ffffff, #fff);
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%; /* 28.8px */
+}
+
+.play_img {
+  width: 26px;
+  height: 27px;
+  fill: var(--ffffff, #fff);
+}
+
+.buttons__container {
+  margin-top: 40px;
+  justify-content: start;
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text_button {
+  color: var(--ffffff, #fff);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  display: inline-flex;
+  padding: 15px 30px;
+  align-items: flex-start;
+  gap: 10px;
+  height: 60px;
+
+  border-radius: 5px;
+  background: var(--3-a-68-b-8, #3a68b8);
+
+  margin-right: 5px;
+}
+
+.rocketman_container {
+  flex-shrink: 0;
+  width: 50%;
+}
+
+.top__logo__container {
+  text-align: center;
+
+  gap: 30px;
+}
+
+.logo_smth {
+  height: 60px;
+  margin: 35px;
+}
