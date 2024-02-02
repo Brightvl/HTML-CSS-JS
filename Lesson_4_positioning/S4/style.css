@@ -8,13 +8,12 @@
 body {
   display: flex;
   flex-direction: column;
-
-  background: var(--020-a-18, #020a18);
-  /* background: var(--020-a-18, #2755a3); */
+  gap: 50px;
   max-width: 1600px;
   margin: auto;
   width: 80%;
-  gap: 50px;
+
+  background: var(--020-a-18, #020a18);
 }
 
 a {
@@ -55,6 +54,9 @@ a {
   gap: 10px;
   width: 80%;
 }
+.left__top__container1 {
+  align-items: start;
+}
 
 .text_top {
   color: var(--3-a-68-b-8, #3a68b8);
@@ -90,14 +92,12 @@ a {
   justify-content: start;
   display: flex;
   flex-wrap: wrap;
-
 }
 .play_img {
   width: 26px;
   height: 27px;
   fill: var(--ffffff, #fff);
 }
-
 
 .text_button {
   color: var(--ffffff, #fff);
@@ -119,10 +119,13 @@ a {
   margin-right: 5px;
 }
 
-.rocketman_container {
+.img {
   display: flex;
   justify-items: center;
   width: 50%;
+}
+.brain{
+  width: 90%;
 }
 
 .top__logo__container {
@@ -133,4 +136,5 @@ a {
 
 .logo_smth {
   height: 60px;
+
 }
