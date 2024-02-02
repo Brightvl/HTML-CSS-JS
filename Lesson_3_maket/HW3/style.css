@@ -16,13 +16,10 @@ button {
   padding: 20px;
 }
 
-.logo_img {
-    
-}
-
 .menu__links__container {
   display: inline-block;
 }
+
 .text,
 .home_text_link {
   font-size: 14px;
@@ -43,7 +40,7 @@ button {
 .center__cont {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   margin-top: 95px;
 }
@@ -63,6 +60,7 @@ button {
 
 .buttons {
   display: flex;
+  align-content: center;
 }
 
 .button_left,
@@ -78,6 +76,7 @@ button {
   background: rgb(242, 88, 34);
   margin-right: 70px;
 
+  border: rgb(2, 221, 20);
   color: rgb(255, 255, 255);
 }
 
@@ -95,9 +94,6 @@ button {
   text-align: left;
 }
 
-/* .right {
-} */
-
 /* Нижняя панель */
 .bottom__panel {
   display: flex;
@@ -107,5 +103,6 @@ button {
   align-items: center;
 }
 .bottom_img {
-  margin: 20px;
+  size: 50px;
+  margin:25px ;
 }
