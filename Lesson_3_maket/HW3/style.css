@@ -1,0 +1,111 @@
+* {
+  font-family: Arimo, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+
+/* Класс для панели header */
+.heading__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo_img {
+    
+}
+
+.menu__links__container {
+  display: inline-block;
+}
+.text,
+.home_text_link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: left;
+
+  margin: 20px;
+
+  color: rgb(0, 0, 0);
+}
+.home_text_link {
+  color: rgb(242, 88, 34);
+}
+
+/* Центральная часть сайта */
+.center__cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 95px;
+}
+
+.left {
+  width: 30%;
+}
+
+.SEO_text {
+  color: rgb(0, 0, 0);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 69px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button_left,
+.button_right {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2.5;
+  width: 140px;
+}
+.button_left {
+  border-radius: 50px;
+  box-shadow: 4px 4px 8px 0px rgba(242, 88, 34, 0.2);
+  background: rgb(242, 88, 34);
+  margin-right: 70px;
+
+  color: rgb(255, 255, 255);
+}
+
+.button_right {
+  color: rgb(170, 170, 170);
+  background: rgb(255, 255, 255);
+}
+
+.description {
+  color: rgb(136, 136, 136);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+/* .right {
+} */
+
+/* Нижняя панель */
+.bottom__panel {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  background: rgb(255, 255, 255);
+  align-items: center;
+}
+.bottom_img {
+  margin: 20px;
+}
