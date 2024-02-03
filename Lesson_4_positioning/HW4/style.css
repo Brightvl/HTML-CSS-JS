@@ -1,0 +1,108 @@
+* {
+  font-family: Arimo, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+
+.center {
+  padding-left: calc(50% - 50%);
+  padding-right: calc(50% - 50%);
+}
+
+/* header */
+.heading__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading__logo {
+  display: flex;
+}
+.heading_logo_text {
+  color: rgb(242, 88, 34);
+}
+
+.menu__links {
+  display: flex;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 20px;
+}
+.text1 {
+  color: rgb(242, 88, 34);
+}
+
+/* Контент */
+.content__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.content__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.SEO_text {
+  font-size: 60px;
+  line-height: 69px;
+}
+
+.content__buttons {
+  display: flex;
+  align-content: center;
+}
+.description_text {
+  color: rgb(136, 136, 136);
+  font-size: 20px;
+  line-height: 23px;
+}
+.content_button {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 3;
+  width: 140px;
+}
+.content_button_left {
+  border-radius: 50px;
+  box-shadow: 4px 4px 8px 0px rgba(242, 88, 34, 0.2);
+  background: rgb(242, 88, 34);
+  color: rgb(255, 255, 255);
+}
+
+.content_button_right {
+  color: rgb(170, 170, 170);
+  background: rgb(255, 255, 255);
+}
+
+/* Нижняя панель */
+.bottom__panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 6%;
+  
+
+  background: rgb(255, 255, 255);
+}
+.bottom_img {
+  max-width: 150px;
+  margin-top: 5%;
+}
