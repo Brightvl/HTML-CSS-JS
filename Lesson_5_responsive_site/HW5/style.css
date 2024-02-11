@@ -82,11 +82,14 @@ button {
   line-height: 3;
   width: 140px;
 }
+
 .content_button_left {
   border-radius: 50px;
-  box-shadow: 4px 4px 8px 0px rgba(242, 88, 34, 0.2);
   background: rgb(242, 88, 34);
   color: rgb(255, 255, 255);
+}
+.content_button_left:hover {
+  box-shadow: 4px 4px 8px 0px rgba(242, 88, 34, 0.2);
 }
 
 .content_button_right {
@@ -111,20 +114,28 @@ button {
 }
 
 /* Стикеры */
-.stickers__block {
-  display: flex;
+
+.stickers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-block: 90px;
 }
 
-.sticker {
-  display: flex;
-  flex-direction: column;
+.button_sticker {
+  border-radius: 20px;
+  text-align: left;
+  background: rgb(255, 255, 255);
+}
+.button_sticker:hover {
+  box-shadow: 15px 25px 56px 6px rgba(0, 0, 0, 0.06);
 }
 
 .img_sticker,
 .sticker_text1,
 .sticker_text2,
 .sticker_text3 {
-  margin-block: 10px;
+  margin: 10px;
 }
 
 .img_sticker {
@@ -135,7 +146,6 @@ button {
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
-  letter-spacing: 0%;
 }
 
 .sticker_text2 {
@@ -143,30 +153,21 @@ button {
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
 }
 
 .sticker_text3 {
   font-size: 11px;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
 }
 
 /* Описание услуг */
-
-.service__block{
-  display: flex;
-}
 .vertical_block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  text-align: center;
 }
 
-.service__sticker{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Стикеры_сервис */
+.service__sticker {
+  text-align: center;
+  background: rgb(255, 255, 255);
 }
