@@ -1,0 +1,91 @@
+* {
+  font-family: Arimo, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  padding-left: calc(50% - 800px);
+  padding-right: calc(50% - 800px);
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+
+.pink-color {
+  color: rgb(241, 109, 127);
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-around;
+
+  background: rgb(34, 34, 34);
+}
+
+.header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* banner */
+
+.banner {
+  background: rgb(241, 228, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__text {
+  display: flex;
+  gap: 10px;
+  font-size: 32px;
+  font-weight: 700;
+
+  letter-spacing: 0%;
+  text-align: left;
+}
+.banner_rectangle {
+  min-width: 12px;
+  background: rgb(241, 109, 127);
+}
+
+/* offer */
+.offer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+img {
+  width: 20%; /* Исправлено: изображение теперь будет занимать 100% ширины контейнера */
+  height: 20%; /* Исправлено: высота автоматически подстраивается для сохранения пропорций */
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  text-align: center; /* Исправлено: текст выравнивается по центру */
+}
+
+/* catalog */
