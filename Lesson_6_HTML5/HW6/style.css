@@ -1,91 +1,197 @@
 * {
-  font-family: Arimo, sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-  padding-left: calc(50% - 800px);
-  padding-right: calc(50% - 800px);
-}
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 button {
-  border: none;
+    border: none;
+}
+
+.center {
+    padding-left: calc(50% - 800px);
+    padding-right: calc(50% - 800px);
 }
 
 .pink-color {
-  color: rgb(241, 109, 127);
+    color: rgb(241, 109, 127);
 }
 
-/* header */
-header {
-  display: flex;
-  justify-content: space-around;
-
-  background: rgb(34, 34, 34);
+/*region header*/
+.header {
+    background: rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .header__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-/* banner */
+/*endregion*/
 
+/*region banner*/
 .banner {
-  background: rgb(241, 228, 230);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background: rgb(241, 228, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner__text {
-  display: flex;
-  gap: 10px;
-  font-size: 32px;
-  font-weight: 700;
+    display: flex;
+    gap: 10px;
+    min-font-size: 32px;
+    font-weight: 700;
 
-  letter-spacing: 0%;
-  text-align: left;
+    letter-spacing: 0;
+    text-align: left;
 }
+
 .banner_rectangle {
-  min-width: 12px;
-  background: rgb(241, 109, 127);
+    min-width: 12px;
+    background: rgb(241, 109, 127);
 }
 
-/* offer */
+/*endregion*/
+
+/*region offer*/
 .offer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .image-container {
-  position: relative;
+    min-height: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.6) inset;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+.image-container1 {
+    background-image: url("./img/main/offer/Layer 43.png");
 }
 
-img {
-  width: 20%; /* Исправлено: изображение теперь будет занимать 100% ширины контейнера */
-  height: 20%; /* Исправлено: высота автоматически подстраивается для сохранения пропорций */
+.image-container2 {
+    background-image: url("./img/main/offer/Rectangle 30.png");
 }
+
+.image-container3 {
+    background-image: url("./img/main/offer/Rectangle 31.png");
+}
+
+.image-container4 {
+    grid-column: 1 / 4;
+    background-image: url("./img/main/offer/Rectangle 20.png");
+    min-height: 180px;
+}
+
 
 .image-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
-  text-align: center; /* Исправлено: текст выравнивается по центру */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* catalog */
+/*endregion*/
+
+
+/*region catalog*/
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+.catalog_header {
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(248, 248, 248);
+}
+
+.catalog-img {
+    min-width: 100%;
+}
+
+.text1, .text2, .item_name, .item-description, .item-price {
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 10px;
+}
+
+.text1 {
+    color: rgb(34, 34, 34);
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0;
+}
+
+.text2 {
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+
+.textarea {
+    text-align: left;
+}
+
+.item_name {
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.item-description {
+    color: rgb(93, 93, 93);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.item-price {
+    color: rgb(241, 109, 127);
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.button {
+    place-self: center;
+    grid-column-start: 2;
+    width: 212px;
+    height: 42px;
+    background-color: transparent;
+    border: 1px solid rgb(241, 109, 127);;
+}
+
+/*endregion*/
