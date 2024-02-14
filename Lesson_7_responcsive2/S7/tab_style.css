@@ -1,77 +1,78 @@
 /* Планшет */
 @media (max-width: 900px) {
-  body {
-    width: 90%;
-    align-items: center;
-  }
+    body {
+        width: 90%;
+        align-items: center;
+    }
 
-  .content__block {
-    flex-direction: column;
-  }
+    .content__block {
+        flex-direction: column;
+    }
 
-  .logo__block {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    gap: 20px;
-  }
+    .logo__block {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        gap: 20px;
+    }
 
-  .logo1 {
-    justify-self: right;
-  }
+    .logo1 {
+        justify-self: right;
+    }
 
-  .logo3 {
-    justify-self: center;
-  }
+    .logo3 {
+        justify-self: center;
+    }
 
-  .grade__block {
-    display: grid;
-    border-radius: 10px;
-    grid-template: 1fr 1fr 1fr/ 1fr;
-    gap: 20px;
-    width: 60%;
-    justify-items: center;
-    align-items: center;
-  }
+    .grade__block {
+        display: grid;
+        border-radius: 10px;
+        grid-template: 1fr 1fr 1fr/ 1fr;
+        gap: 20px;
+        width: 60%;
+        justify-items: center;
+        align-items: center;
+    }
 
-  .block {
-    gap: 20px;
-  }
+    .block {
+        gap: 20px;
+    }
 
-  .block4,
-  .block5,
-  .block6 {
-    display: none;
-  }
+    .block4,
+    .block5,
+    .block6 {
+        display: none;
+    }
 
-  .footer {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    justify-content: center;
-    align-items: start;
-    gap: 10%;
-  }
+    .footer {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        justify-content: center;
+        align-items: start;
+        gap: 10%;
+    }
 
-  .footer1,
-  .footer2,
-  .footer3 {
-    width: 80%;
-  }
-  .img {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-  }
+    .footer1,
+    .footer2,
+    .footer3 {
+        width: 80%;
+    }
 
-  .img1 {
-    width: 40%;
-  }
+    .img {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
 
-  .title {
-    color: var(--ffffff, #fff);
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 130%;
-    /* 71.5px */
-  }
+    .img1 {
+        width: 40%;
+    }
+
+    .title {
+        color: #fff;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 130%;
+        /* 71.5px */
+    }
 }
