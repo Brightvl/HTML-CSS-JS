@@ -1,0 +1,56 @@
+@media (max-width: 768px) {
+    .center {
+        padding-left: calc(50% - 386px);
+        padding-right: calc(50% - 386px);
+    }
+
+
+    /*region banner*/
+    .offer {
+        margin: 20px;
+    }
+    .banner-img {
+        max-width: 368px;
+    }
+    .banner__text {
+        gap: 10px;
+        min-font-size: 24px;
+    }
+
+    /*endregion*/
+    /*region offer*/
+    .offer {
+        gap: 20px;
+    }
+
+    .image-container {
+        min-height: 160px;
+    }
+
+    .image-container4 {
+        min-height: 116px;
+    }
+
+    /*endregion*/
+    /*region catalog*/
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin: 20px;
+    }
+
+    .catalog_header {
+        grid-column: 1 / 3;
+    }
+
+    .text2 {
+        margin-top: 0;
+    }
+
+    .button {
+        grid-column: 1 / 3;
+    }
+
+    /*endregion*/
+
+}
