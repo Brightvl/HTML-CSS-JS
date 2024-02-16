@@ -1,0 +1,52 @@
+@media (max-width: 391px) {
+    .center {
+        padding-left: calc(50% - 195px);
+        padding-right: calc(50% - 195px);
+    }
+
+    /*region header*/
+    .header {
+    }
+
+    .header__content {
+    }
+
+    .menu-link-hide{
+     width: 0;
+    }
+
+    /*endregion*/
+    /*region banner*/
+    .banner-img {
+        max-width: 0;
+    }
+
+    .banner__text {
+    margin-block: 200px;
+    }
+
+    /*endregion*/
+    /*region offer*/
+    .offer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container {
+        min-height: 248px;
+        box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.6) inset;
+    }
+
+    .image-container4 {
+        min-height: 111px;
+    }
+
+    /*endregion*/
+    /*region catalog*/
+    .catalog {
+        display: flex;
+        flex-direction: column;
+    }
+    /*endregion*/
+
+}
