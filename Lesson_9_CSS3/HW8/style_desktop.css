@@ -354,8 +354,9 @@ button {
 .recall {
     font-style: italic;
     font-size: 20px;
-    width: 20vw;
+    width: 35vw;
     line-height: 23px;
+    gap: 20px;
 }
 
 .recall-img {
@@ -377,6 +378,11 @@ button {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+
+}
+
+.subscribe__text {
+    margin: 20px;
 }
 
 .subscribe__button .input-button {
