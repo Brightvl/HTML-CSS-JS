@@ -1,0 +1,427 @@
+* {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.center {
+    padding-left: calc(50% - 640px);
+    padding-right: calc(50% - 640px);
+}
+
+.compression {
+    margin-inline: 15%;
+}
+
+.pink-color {
+    color: rgb(241, 109, 127);
+}
+
+/*region header*/
+.header {
+    background: rgb(34, 34, 34);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30%;
+
+}
+
+.header__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__content img {
+    width: 2vw;
+    height: 2vw;
+    margin-block: 20px;
+}
+
+
+/*endregion*/
+
+/*region banner*/
+.banner {
+    background: rgb(241, 228, 230);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10%;
+    max-height: 764px;
+}
+
+.banner-img {
+    height: 50%;
+}
+
+.banner__text {
+    display: flex;
+    gap: 10px;
+    min-font-size: 32px;
+    font-weight: 700;
+
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.banner_rectangle {
+    min-width: 12px;
+    background: rgb(241, 109, 127);
+}
+
+/*endregion*/
+
+/*region offer*/
+.offer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-block: 5%;
+}
+
+.image-container {
+    min-height: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.6) inset;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image-container1 {
+    background-image: url("img/main/offer/Layer 43.png");
+}
+
+.image-container2 {
+    background-image: url("img/main/offer/Rectangle 30.png");
+}
+
+.image-container3 {
+    background-image: url("img/main/offer/Rectangle 31.png");
+}
+
+.image-container4 {
+    grid-column: 1 / 4;
+    background-image: url("img/main/offer/Rectangle 20.png");
+    min-height: 180px;
+}
+
+
+.image-text {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/*endregion*/
+
+/*region catalog*/
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+.catalog_header {
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(248, 248, 248, 0.5);
+    max-width: 580px;
+    height: 500px;
+
+}
+
+.catalog__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.catalog__img_1 {
+    background-image: url("img/main/catalog/Rectangle 15 copy.svg");
+}
+
+.catalog__img_2 {
+    background-image: url("img/main/catalog/Image.svg");
+}
+
+.catalog__img_3 {
+    background-image: url("img/main/catalog/Rectangle 15.svg");
+}
+
+.catalog__img_4 {
+    background-image: url("img/main/catalog/Image3.svg");
+}
+
+.catalog__img_5 {
+    background-image: url("img/main/catalog/Image4.svg");
+}
+
+.catalog__img_6 {
+    background-image: url("img/main/catalog/Imag6.svg");
+}
+
+.catalog__img:hover {
+    box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.6) inset;
+    transition: opacity 0.3s ease;
+}
+
+.catalog__img .button {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 139px;
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid rgb(251, 251, 251);
+    cursor: pointer;
+}
+
+.catalog__img:hover .button {
+    opacity: 1;
+}
+
+.text1, .text2, .item_name, .item-description, .item-price {
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 10px;
+}
+
+.text1 {
+    color: rgb(34, 34, 34);
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0;
+}
+
+.text2 {
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.textarea {
+    text-align: left;
+}
+
+.item_name {
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.item-description {
+    color: rgb(93, 93, 93);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.item-price {
+    color: rgb(241, 109, 127);
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.catalog .button-browse {
+    place-self: center;
+    grid-column-start: 2;
+    width: 212px;
+    height: 42px;
+    background-color: transparent;
+    border: 1px solid rgb(241, 109, 127);
+    cursor: pointer;
+}
+
+
+/*endregion*/
+
+/*region privileges*/
+.privileges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(34, 34, 36);
+    min-height: 341px;
+    margin-top: 5%;
+}
+
+.privilege {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    margin: 3%;
+    gap: 20px;
+}
+
+.privilege_header, .privilege_text {
+    color: rgb(251, 251, 251);
+    font-weight: 400;
+}
+
+.privilege_header {
+    font-size: 19.96px;
+    line-height: 23px;
+    text-align: left;
+}
+
+.privilege_text {
+    font-size: 13.97px;
+    line-height: 16px;
+    text-align: center;
+}
+
+/*endregion*/
+
+/*region subscribe*/
+.subscribe {
+    gap: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 448px;
+
+    background-image: url("img/main/subscribe/Layer 41.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+
+    color: rgb(34, 34, 36);
+
+    font-weight: 400;
+}
+
+
+.recall, .subscribe_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recall {
+    font-style: italic;
+    font-size: 20px;
+    width: 35vw;
+    line-height: 23px;
+    gap: 20px;
+}
+
+.recall-img {
+    max-width: 5vw;
+    border-radius: 50%;
+}
+
+.subscribe_panel {
+    font-size: 18px;
+
+}
+
+.subscribe-header {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.subscribe__button {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.subscribe__text {
+    margin: 20px;
+}
+
+.subscribe__button .input-button {
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    background: rgb(225, 225, 225);
+}
+
+.subscribe__button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: rgb(241, 109, 127);
+    color: white;
+    cursor: pointer;
+
+}
+
+/*endregion*/
+
+/*region footer*/
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20%;
+
+
+    background: black;
+    color: rgb(251, 251, 251);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    height: 79px;
+}
+
+.footer .icon-img {
+    width: 32px;
+}
+
+/*endregion*/
