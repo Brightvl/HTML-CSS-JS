@@ -12,13 +12,13 @@
     }
 
     .menu-link-hide{
-     width: 0;
+     display: none;
     }
 
     /*endregion*/
     /*region banner*/
     .banner-img {
-        max-width: 0;
+        display: none;
     }
 
     .banner__text {
@@ -47,6 +47,45 @@
         display: flex;
         flex-direction: column;
     }
+    .catalog_header .text2{
+        text-align: center;
+        font-size: 12px;
+    }
+    /*endregion*/
+
+    /*region privileges*/
+    .privileges {
+        flex-direction: column;
+
+    }
+
+    .privilege {
+        width: 90vw;
+    }
+    /*endregion*/
+
+    /*region subscribe*/
+    .subscribe {
+        flex-direction: column;
+    }
+    .recall {
+        width: 90vw;
+    }
+    .recall-img {
+        max-width: 10vw;
+    }
+    /*endregion*/
+    /*region footer*/
+    .footer {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    .footer .icon-img {
+        width: 32px;
+    }
+
     /*endregion*/
 
 }

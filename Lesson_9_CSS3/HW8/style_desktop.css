@@ -46,7 +46,9 @@ button {
 .header__content img {
     width: 2vw;
     height: 2vw;
+    margin-block: 20px;
 }
+
 
 /*endregion*/
 
@@ -153,12 +155,77 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(248, 248, 248);
-    max-width: 100%;
+    background: rgba(248, 248, 248, 0.5);
+    max-width: 580px;
+    height: 500px;
+
 }
 
-.catalog-img {
-    max-width: 100%;
+.catalog__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.catalog__img_1 {
+    background-image: url("img/main/catalog/Rectangle 15 copy.svg");
+}
+
+.catalog__img_2 {
+    background-image: url("img/main/catalog/Image.svg");
+}
+
+.catalog__img_3 {
+    background-image: url("img/main/catalog/Rectangle 15.svg");
+}
+
+.catalog__img_4 {
+    background-image: url("img/main/catalog/Image3.svg");
+}
+
+.catalog__img_5 {
+    background-image: url("img/main/catalog/Image4.svg");
+}
+
+.catalog__img_6 {
+    background-image: url("img/main/catalog/Imag6.svg");
+}
+
+.catalog__img:hover {
+    box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.6) inset;
+    transition: opacity 0.3s ease;
+}
+
+.catalog__img .button {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 139px;
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid rgb(251, 251, 251);
+    cursor: pointer;
+}
+
+.catalog__img:hover .button {
+    opacity: 1;
 }
 
 .text1, .text2, .item_name, .item-description, .item-price {
@@ -179,7 +246,6 @@ button {
     font-size: 14px;
     line-height: 16px;
 }
-
 
 .textarea {
     text-align: left;
@@ -204,14 +270,16 @@ button {
     line-height: 18px;
 }
 
-.button {
+.catalog .button-browse {
     place-self: center;
     grid-column-start: 2;
     width: 212px;
     height: 42px;
     background-color: transparent;
     border: 1px solid rgb(241, 109, 127);
+    cursor: pointer;
 }
+
 
 /*endregion*/
 
@@ -222,7 +290,7 @@ button {
     align-items: center;
 
     background: rgb(34, 34, 36);
-    height: 341px;
+    min-height: 341px;
     margin-top: 5%;
 }
 
@@ -231,7 +299,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 30vw;
+    margin: 3%;
     gap: 20px;
 }
 
@@ -310,7 +379,6 @@ button {
     padding: 10px;
 }
 
-
 .subscribe__button .input-button {
     padding: 10px;
     border: none;
@@ -349,6 +417,5 @@ button {
 .footer .icon-img {
     width: 32px;
 }
-
 
 /*endregion*/
