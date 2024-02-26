@@ -8,6 +8,10 @@
         width: 5vw;
         height: 5vw;
     }
+    .basket__block::after {
+        top: 5px;
+        left: 40px;
+    }
     /*region banner*/
     .offer {
         margin: 20px;

@@ -5,10 +5,8 @@
     }
 
     /*region header*/
-    .header {
-    }
-
-    .header__content {
+    .basket__block{
+        display: none;
     }
 
     .menu-link-hide{
