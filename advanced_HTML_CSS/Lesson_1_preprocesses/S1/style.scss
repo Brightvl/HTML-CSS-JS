@@ -1,0 +1,40 @@
+// Примесь
+@mixin flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// Наследование
+%base-font {
+  font-family: sans-serif;
+  font-style: normal;
+}
+
+@import "vars";
+
+.text-color {
+  color: $text-color;
+}
+
+.nav {
+  display: flex;
+  gap: $gap-nav;
+
+  &__link {
+    @extend %base-font;
+    text-decoration: none;
+  }
+}
+
+.content {
+  @include flex-center();
+  gap: $gap-nav;
+
+  &__item {
+    width: calc($width-site/4);
+    height: 200px;
+    border: $border-param;
+  }
+}

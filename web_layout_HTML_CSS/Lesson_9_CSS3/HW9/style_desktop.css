@@ -161,7 +161,7 @@ button {
 
 }
 
-.catalog__img {
+.catalog-img {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -198,12 +198,12 @@ button {
     background-image: url("img/main/catalog/Imag6.svg");
 }
 
-.catalog__img:hover {
+.catalog-img:hover {
     box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.6) inset;
     transition: opacity 0.3s ease;
 }
 
-.catalog__img .button {
+.catalog-img .button {
     opacity: 0;
     transition: opacity 0.3s linear;
 
@@ -224,7 +224,7 @@ button {
     cursor: pointer;
 }
 
-.catalog__img:hover .button {
+.catalog-img:hover .button {
     opacity: 1;
 }
 
@@ -247,7 +247,7 @@ button {
     line-height: 16px;
 }
 
-.textarea {
+.text-area {
     text-align: left;
 }
 
@@ -294,7 +294,7 @@ button {
     margin-top: 5%;
 }
 
-.privilege {
+.privilege-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
