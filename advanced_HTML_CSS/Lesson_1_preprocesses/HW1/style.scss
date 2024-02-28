@@ -37,19 +37,32 @@ button {
   @include centerFlex;
   justify-content: space-around;
   gap: 30%;
-}
 
-.header__content {
-  @include centerFlex;
-  gap: 20px;
-}
+  &__content {
+    @include centerFlex;
+    gap: 20px;
 
-.header__content img {
-  width: 2vw;
-  height: 2vw;
-  margin-block: 20px;
-}
+    img {
+      width: 2vw;
+      height: 2vw;
+      margin-block: 20px;
+    }
 
+    .button-account {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: $selectColor;
+      border: none;
+    }
+  }
+
+}
 
 /*endregion*/
 
@@ -96,49 +109,48 @@ button {
   gap: 20px;
   margin-block: 5%;
 
-}
+  .image-container {
+    position: relative;
+    min-width: 100%;
+    overflow: hidden;
 
-.image-container {
-  position: relative;
-  min-width: 100%;
-  overflow: hidden;
+    .img {
+      width: 100%;
+    }
 
-  .img {
-    width: 100%;
+    .background_block {
+      min-width: min-content;
+      height: max-content;
+      background: #F8F3F4;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 10%;;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+
+    }
   }
 
-  .background_block {
-    min-width: min-content;
-    height: max-content;
-    background: #F8F3F4;
+  .image-container1 {
+    grid-area: men;
   }
 
-  .image-text {
-    position: absolute;
-    top: 10%;;
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.025em;
-
+  .image-container2 {
+    grid-area: women;
   }
-}
 
-.image-container1 {
-  grid-area: men;
-}
+  .image-container4 {
+    grid-area: accessories;
+  }
 
-.image-container2 {
-  grid-area: women;
-}
-
-.image-container4 {
-  grid-area: accessories;
-}
-
-.image-container4 {
-  grid-area: kids;
+  .image-container4 {
+    grid-area: kids;
+  }
 }
 
 /*endregion*/
@@ -445,17 +457,17 @@ button {
   align-items: center;
   gap: 20%;
 
-
-  background: black;
-  color: rgb(251, 251, 251);
+  background: $backBlock;
   font-size: 16px;
+  line-height: 42px;
   font-weight: 400;
-  line-height: 18px;
-  height: 79px;
-}
+  letter-spacing: 0.025em;
+  color: #7a7a7a;
 
-.footer .icon-img {
-  width: 32px;
+  .icon-img {
+    width: 32px;
+    margin-block: 10px;
+  }
 }
 
 /*endregion*/
