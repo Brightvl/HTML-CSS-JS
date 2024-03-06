@@ -23,16 +23,43 @@ a {
   }
 }
 
-.logo {
-  &__link {
-    &_text-style {
-      font-size: 27px;
-      line-height: 32px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 0.025em;
-      color: #3e3e40;
+//region header
+.header {
+  height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+  border: 1px solid #ececec;
+  background-color: #ffffff;
+
+  &_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &_position {
+      gap: 20px;
     }
+  }
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &__text {
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #3e3e40;
 
   }
 
@@ -41,7 +68,130 @@ a {
   }
 }
 
+.header-form {
+  display: flex;
+}
 
+.button-site {
+  background-color: #f16d7f;
+  padding: 12px 19px;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #fff;
+    color: #f16d7f;
+    border: 1px solid #f16d7f;
+  }
+
+  &__text {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+
+//endregion
+
+
+//region breadcrumbs
+.top-head {
+  height: 148px;
+  background-color: #f8f3f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__heading {
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $selectColor;
+  }
+}
+//endregion
+
+//region banner
+.banner {
+  height: 613px;
+  background-color: #e8e8e8;
+  margin-bottom: 100px;
+}
+
+.banner-block {
+  height: 777px;
+  background-color: #f7f7f7;
+
+}
+
+.the-brand {
+  color: #222222;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+
+.text-fashion {
+  color: #222222;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 31px;
+}
+
+.banner-text {
+  margin-top: 224px;
+  border-left: 12px solid #f16d7f;
+  float: left;
+  padding-left: 12px;
+}
+
+.span-fashion {
+  color: #f16d7f;
+}
+//endregion
+
+//region bread crumbs
+
+.breadcrumbs {
+  &__ul {
+    list-style-type: none;
+    display: flex;
+
+  }
+
+  &__li:not(:last-child):after {
+    content: "/";
+    padding-inline: 8px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+
+  &__li:last-child .breadcrumbs__link {
+    font-weight: 700;
+    color: $selectColor;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+}
+
+
+//endregion
+
+//region menu
 .menu {
 
   //region Элемент
@@ -120,7 +270,6 @@ a {
 
   &__link {
     display: block;
-    font-family: Lato;
     font-size: 14px;
     line-height: 28px;
     font-weight: 400;
@@ -129,6 +278,111 @@ a {
     text-decoration: none;
   }
 }
+
+//endregion
+
+//region catalog
+.catalog {
+  margin-bottom: 500px;
+}
+
+.item-title {
+  &__position {
+
+  }
+}
+
+.txt-box {
+  padding: 20px;
+
+  &__description {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222222;
+    margin-bottom: 17px;
+  }
+
+}
+
+.item-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+}
+
+.catalog-item {
+  width: 263px;
+  position: relative;
+  margin-bottom: 40px;
+
+  &__link {
+    width: 263px;
+    display: block;
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &:hover .add-box {
+    display: flex;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &:hover .catalog-item__img {
+    filter: brightness(30%);
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f16d7f;
+  }
+}
+
+.add-box {
+  position: absolute;
+  top: 98px;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px;
+    align-items: center;
+    pointer-events: all;
+
+    &:hover {
+      box-shadow: 0 0 10px 0 #fff;
+    }
+  }
+
+  &__img {
+    margin-right: 10px;
+  }
+
+  &__txt {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}
+
+//endregion
 
 /*region subscribe*/
 .subscribe {
@@ -213,6 +467,7 @@ a {
 
 /*endregion*/
 
+//region footer
 .footer-block {
   display: flex;
   justify-content: space-around;
@@ -276,4 +531,6 @@ a {
     color: #7a7a7a;
   }
 }
+
+//endregion
 
