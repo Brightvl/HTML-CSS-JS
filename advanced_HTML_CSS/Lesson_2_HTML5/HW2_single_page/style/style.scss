@@ -21,7 +21,9 @@ a {
     width: $widthSite;
     margin: 0 auto;
   }
+
 }
+
 
 //region header
 .header {
@@ -94,103 +96,6 @@ a {
 
 //endregion
 
-
-//region breadcrumbs
-.top-head {
-  height: 148px;
-  background-color: #f8f3f4;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  &__heading {
-    font-size: 24px;
-    line-height: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $selectColor;
-  }
-}
-//endregion
-
-//region banner
-.banner {
-  height: 613px;
-  background-color: #e8e8e8;
-  margin-bottom: 100px;
-}
-
-.banner-block {
-  height: 777px;
-  background-color: #f7f7f7;
-
-}
-
-.the-brand {
-  color: #222222;
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 45px;
-  margin-bottom: 20px;
-}
-
-.text-fashion {
-  color: #222222;
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 31px;
-}
-
-.banner-text {
-  margin-top: 224px;
-  border-left: 12px solid #f16d7f;
-  float: left;
-  padding-left: 12px;
-}
-
-.span-fashion {
-  color: #f16d7f;
-}
-//endregion
-
-//region bread crumbs
-
-.breadcrumbs {
-  &__ul {
-    list-style-type: none;
-    display: flex;
-
-  }
-
-  &__li:not(:last-child):after {
-    content: "/";
-    padding-inline: 8px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    color: #636363;
-  }
-
-  &__li:last-child .breadcrumbs__link {
-    font-weight: 700;
-    color: $selectColor;
-  }
-
-  &__link {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    color: #636363;
-  }
-}
-
-
-//endregion
-
 //region menu
 .menu {
 
@@ -251,9 +156,6 @@ a {
     border-left: 1px solid #e8e8e8;
   }
 
-  &__item {
-
-  }
 
   &__heading {
     font-size: 14px;
@@ -281,16 +183,239 @@ a {
 
 //endregion
 
-//region catalog
-.catalog {
-  margin-bottom: 500px;
-}
 
-.item-title {
-  &__position {
+//region breadcrumbs
+.top-head {
+  height: 148px;
+  background-color: #f8f3f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
+  &__heading {
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $selectColor;
   }
 }
+
+//endregion
+
+//region banner
+.banner {
+  height: 613px;
+  background-color: #e8e8e8;
+  margin-bottom: 800px;
+
+
+  &-block {
+    height: 777px;
+    background-color: #f7f7f7;
+
+  }
+
+  &_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.banner-text {
+  margin-top: 224px;
+  border-left: 12px solid #f16d7f;
+  float: left;
+  padding-left: 12px;
+
+  &__header {
+    color: #222222;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-bottom: 20px;
+  }
+
+  &__p {
+    color: #222222;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 31px;
+  }
+
+}
+
+.banner__img {
+  height: 590px;
+
+  &_size {
+
+    height: 100%;
+  }
+}
+
+
+//endregion
+
+
+//region product card
+.description-card {
+
+  text-align: center;
+  width: 1141px;
+  height: 730px;
+  position: absolute;
+  top: 790px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+
+
+  &__button {
+    background-color: $selectColor;
+    color: white;
+    padding: 10px;
+    width: 540px;
+    cursor: pointer;
+  }
+
+}
+
+.product-text {
+
+  width: 60%;
+  margin-top: 50px;
+
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &_select-color {
+    color: $selectColor;
+  }
+
+  &__header {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid $selectColor;
+  }
+
+
+  &__name {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #4d4d4d;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #5e5e5e;
+  }
+
+  &__option {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &_first-color {
+      color: #b9b9b9;
+    }
+
+    &_last-color {
+      color: #2f2f2f;
+    }
+
+  }
+
+  &____price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ef5b70;
+  }
+
+
+}
+
+.choose {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  & label {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #2f2f2f;
+  }
+}
+
+
+//endregion
+
+
+//region bread crumbs
+
+.breadcrumbs {
+  &__ul {
+    list-style-type: none;
+    display: flex;
+
+  }
+
+  &__li:not(:last-child):after {
+    content: "/";
+    padding-inline: 8px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+
+  &__li:last-child .breadcrumbs__link {
+    font-weight: 700;
+    color: $selectColor;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+}
+
+
+//endregion
+
+
+//region catalog
+
 
 .txt-box {
   padding: 20px;
