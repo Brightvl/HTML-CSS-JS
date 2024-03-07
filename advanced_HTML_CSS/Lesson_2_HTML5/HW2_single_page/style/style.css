@@ -158,7 +158,7 @@ a {
 .banner {
   height: 613px;
   background-color: #e8e8e8;
-  margin-bottom: 800px;
+  margin-bottom: 500px;
 }
 .banner-block {
   height: 777px;
@@ -203,7 +203,7 @@ a {
 .description-card {
   text-align: center;
   width: 1141px;
-  height: 730px;
+  height: 500px;
   position: absolute;
   top: 790px;
   background-color: #ffffff;
@@ -215,11 +215,13 @@ a {
   gap: 30px;
 }
 .description-card__button {
-  background-color: rgb(241, 109, 127);
-  color: white;
   padding: 10px;
-  width: 540px;
   cursor: pointer;
+  color: rgb(241, 109, 127);
+  width: 537px;
+  height: 55px;
+  background-color: #ffffff;
+  border: 1px solid rgb(241, 109, 127);
 }
 
 .product-text {
@@ -459,6 +461,7 @@ a {
 .footer-block {
   display: flex;
   justify-content: space-around;
+  margin-block: 50px;
 }
 
 .footer-navigation {
@@ -488,7 +491,7 @@ a {
 }
 .footer-menu .footer-menu__link {
   font-size: 16px;
-  line-height: 59px;
+  line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.025em;
   color: #898989;

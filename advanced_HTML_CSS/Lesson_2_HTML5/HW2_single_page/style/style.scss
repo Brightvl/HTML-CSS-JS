@@ -207,7 +207,7 @@ a {
 .banner {
   height: 613px;
   background-color: #e8e8e8;
-  margin-bottom: 800px;
+  margin-bottom: 500px;
 
 
   &-block {
@@ -268,7 +268,7 @@ a {
 
   text-align: center;
   width: 1141px;
-  height: 730px;
+  height: 500px;
   position: absolute;
   top: 790px;
   background-color: #ffffff;
@@ -281,17 +281,18 @@ a {
 
 
   &__button {
-    background-color: $selectColor;
-    color: white;
     padding: 10px;
-    width: 540px;
     cursor: pointer;
+    color: $selectColor;
+    width: 537px;
+    height: 55px;
+    background-color: #ffffff;
+    border: 1px solid $selectColor;
   }
 
 }
 
 .product-text {
-
   width: 60%;
   margin-top: 50px;
 
@@ -363,6 +364,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
   }
 
   & label {
@@ -448,6 +450,7 @@ a {
     display: block;
     text-decoration: none;
   }
+
 
   &:hover {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.15);
@@ -596,6 +599,7 @@ a {
 .footer-block {
   display: flex;
   justify-content: space-around;
+  margin-block: 50px;
 }
 
 .footer-navigation {
@@ -631,7 +635,7 @@ a {
 
   .footer-menu__link {
     font-size: 16px;
-    line-height: 59px;
+    line-height: 40px;
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #898989;
