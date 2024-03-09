@@ -183,7 +183,6 @@ a {
 
 //endregion
 
-
 //region breadcrumbs
 .top-head {
   height: 148px;
@@ -198,6 +197,41 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     color: $selectColor;
+  }
+}
+
+.breadcrumbs {
+  &__ul {
+    list-style-type: none;
+    display: flex;
+
+  }
+
+  &__li:not(:last-child):after {
+    content: "/";
+    padding-inline: 8px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+
+  &__li:last-child .breadcrumbs__link {
+    font-weight: 700;
+    color: $selectColor;
+  }
+
+  &__link:hover {
+    color: $selectColor;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
   }
 }
 
@@ -261,7 +295,6 @@ a {
 
 
 //endregion
-
 
 //region product card
 .description-card {
@@ -377,44 +410,6 @@ a {
 
 
 //endregion
-
-
-//region bread crumbs
-
-.breadcrumbs {
-  &__ul {
-    list-style-type: none;
-    display: flex;
-
-  }
-
-  &__li:not(:last-child):after {
-    content: "/";
-    padding-inline: 8px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    color: #636363;
-  }
-
-  &__li:last-child .breadcrumbs__link {
-    font-weight: 700;
-    color: $selectColor;
-  }
-
-  &__link {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    color: #636363;
-  }
-}
-
-
-//endregion
-
 
 //region catalog
 

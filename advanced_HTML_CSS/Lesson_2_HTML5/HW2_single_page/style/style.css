@@ -155,6 +155,34 @@ a {
   color: rgb(241, 109, 127);
 }
 
+.breadcrumbs__ul {
+  list-style-type: none;
+  display: flex;
+}
+.breadcrumbs__li:not(:last-child):after {
+  content: "/";
+  padding-inline: 8px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #636363;
+}
+.breadcrumbs__li:last-child .breadcrumbs__link {
+  font-weight: 700;
+  color: rgb(241, 109, 127);
+}
+.breadcrumbs__link:hover {
+  color: rgb(241, 109, 127);
+}
+.breadcrumbs__link {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #636363;
+}
+
 .banner {
   height: 613px;
   background-color: #e8e8e8;
@@ -289,31 +317,6 @@ a {
   line-height: 24px;
   font-weight: 700;
   color: #2f2f2f;
-}
-
-.breadcrumbs__ul {
-  list-style-type: none;
-  display: flex;
-}
-.breadcrumbs__li:not(:last-child):after {
-  content: "/";
-  padding-inline: 8px;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: #636363;
-}
-.breadcrumbs__li:last-child .breadcrumbs__link {
-  font-weight: 700;
-  color: rgb(241, 109, 127);
-}
-.breadcrumbs__link {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: #636363;
 }
 
 .txt-box {
