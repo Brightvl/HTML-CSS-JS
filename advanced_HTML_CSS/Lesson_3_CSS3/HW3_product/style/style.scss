@@ -110,6 +110,7 @@ a {
     &:hover .mega-box {
       display: flex;
     }
+
     &__last:hover .mega-box {
       right: 0;
       left: auto;
@@ -248,6 +249,80 @@ a {
 //endregion
 
 //region catalog
+
+.catalog {
+  display: flex;
+  gap: 20px;
+}
+
+//region details
+
+.catalog-navigation {
+
+}
+
+.catalog-details {
+  width: 250px;
+  margin-block: 20px;
+
+  &[open] &__summary {
+    color: $selectColor;
+  }
+
+  &[open] &__summary::after {
+    content: '\25B2';
+  }
+
+  &__summary {
+    border-left: 5px solid $selectColor;
+    border-bottom: 1px solid #ebebeb;
+    list-style-type: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 37px;
+
+    padding-left: 10px;
+
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &::after {
+      content: '\25BC'; /* Юникод символ треугольника */
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $selectColor;
+    }
+
+  }
+
+  &__ul {
+    list-style-type: none;
+
+  }
+
+  &__link {
+    display: block;
+    margin: 10px;
+
+    font-size: 14px;
+    line-height: 33px;
+    font-weight: 400;
+    color: #6f6e6e;
+
+    &:hover {
+      color: $selectColor;
+    }
+  }
+}
+
+//endregion
+
 .txt-box {
   padding: 20px;
 
@@ -262,9 +337,43 @@ a {
 
 }
 
-.item-box {
+.catalog-filter {
+  display: flex;
+  justify-content: space-between;
+
+
+  color: #6f6e6e;
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    gap: 10px;
+  }
+
+  &__header {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #6f6e6e;
+
+    &:not(:last-child) {
+      border-right: 1px solid #6f6e6e;
+    }
+  }
+}
+
+.catalog-box {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
 }
