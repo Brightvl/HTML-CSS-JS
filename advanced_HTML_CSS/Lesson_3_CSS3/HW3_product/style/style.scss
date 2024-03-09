@@ -17,17 +17,14 @@ a {
 
 
 .container {
-  &_size {
-    width: $widthSite;
-    margin: 0 auto;
-  }
 
+  width: $widthSite;
+  margin: 0 auto;
 }
 
 
 //region header
 .header {
-  height: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
   border: 1px solid #ececec;
   background-color: #ffffff;
@@ -36,7 +33,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 100px;
   }
 
   &__item {
@@ -97,16 +94,31 @@ a {
 //endregion
 
 //region menu
-.menu {
+.navigation {
+  border-top: 1px solid #ececec;
+  height: 60px;
+}
 
-  //region Элемент
+.menu {
+  display: flex;
+  list-style-type: none; //убирает toggle маркер
+  justify-content: center;
+
   &__item {
     position: relative;
 
     &:hover .mega-box {
       display: flex;
     }
+    &__last:hover .mega-box {
+      right: 0;
+      left: auto;
+    }
 
+    &__last:hover .mega-box::before {
+      right: 50px;
+      left: auto;
+    }
   }
 
   &__link {
@@ -119,16 +131,11 @@ a {
     text-transform: uppercase;
   }
 
-  //endregion
-
-  //region Модификатор
-  &_position {
-    display: flex;
-    list-style-type: none; //убирает toggle маркер
-    justify-content: center;
+  &__link:hover {
+    border-bottom: 1px solid $selectColor;
   }
 
-  //endregion
+
 }
 
 .mega-box {
@@ -141,6 +148,7 @@ a {
   top: 50px;
   left: 0;
   right: auto;
+  z-index: 1;
 
   &::before {
     content: "";
@@ -179,6 +187,8 @@ a {
     color: #646464;
     text-decoration: none;
   }
+
+
 }
 
 //endregion
@@ -237,181 +247,7 @@ a {
 
 //endregion
 
-//region banner
-.banner {
-  height: 613px;
-  background-color: #e8e8e8;
-  margin-bottom: 500px;
-
-
-  &-block {
-    height: 777px;
-    background-color: #f7f7f7;
-
-  }
-
-  &_flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-
-.banner-text {
-  margin-top: 224px;
-  border-left: 12px solid #f16d7f;
-  float: left;
-  padding-left: 12px;
-
-  &__header {
-    color: #222222;
-    font-size: 60px;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 45px;
-    margin-bottom: 20px;
-  }
-
-  &__p {
-    color: #222222;
-    font-size: 40px;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 31px;
-  }
-
-}
-
-.banner__img {
-  height: 590px;
-
-  &_size {
-
-    height: 100%;
-  }
-}
-
-
-//endregion
-
-//region product card
-.description-card {
-  text-align: center;
-  width: 1141px;
-  height: 500px;
-
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 30px;
-  transform: translate(0, -50px);
-
-  &__button {
-    padding: 10px;
-    cursor: pointer;
-    color: $selectColor;
-    width: 537px;
-    height: 55px;
-    background-color: #ffffff;
-    border: 1px solid $selectColor;
-  }
-
-}
-
-.product-text {
-  width: 60%;
-  margin-top: 50px;
-
-  border-bottom: 1px solid #eaeaea;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  &_select-color {
-    color: $selectColor;
-  }
-
-  &__header {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 700;
-    border-bottom: 1px solid $selectColor;
-  }
-
-
-  &__name {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #4d4d4d;
-  }
-
-  &__description {
-    font-size: 14px;
-    font-weight: 300;
-    color: #5e5e5e;
-  }
-
-  &__option {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-    &_first-color {
-      color: #b9b9b9;
-    }
-
-    &_last-color {
-      color: #2f2f2f;
-    }
-
-  }
-
-  &____price {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ef5b70;
-  }
-
-
-}
-
-.choose {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-
-  &__block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-  }
-
-  & label {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #2f2f2f;
-  }
-}
-
-
-//endregion
-
 //region catalog
-
-
 .txt-box {
   padding: 20px;
 
