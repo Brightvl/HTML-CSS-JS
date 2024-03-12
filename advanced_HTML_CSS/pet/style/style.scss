@@ -22,6 +22,7 @@ a {
   width: $widthSite;
   margin: 0 auto;
 }
+
 //endregion
 
 //region header
@@ -91,9 +92,6 @@ a {
   }
 }
 
-
-//endregion
-
 //region menu
 .navigation {
   border-top: 1px solid #ececec;
@@ -135,6 +133,7 @@ a {
 
   &__link:hover {
     border-bottom: 1px solid $selectColor;
+    color: $selectColor;
   }
 
 
@@ -188,6 +187,10 @@ a {
     letter-spacing: 0.025em;
     color: #646464;
     text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $selectColor;
   }
 
 
@@ -247,6 +250,7 @@ a {
   }
 }
 
+//endregion
 //endregion
 
 /*region banner*/
@@ -645,6 +649,7 @@ a {
 
 .catalog-box {
   display: grid;
+
   &__single-page {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -746,6 +751,58 @@ a {
 
 //endregion
 
+//region cart
+
+.cart-box {
+  display: block;
+  margin-block: 30px;;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 100px;
+  border-bottom: 1px solid #eaeaea;
+  padding: 20px;
+}
+
+.txt-box-cart {
+  padding: 20px;
+  text-align: left;
+
+
+  &__header {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 17px;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222222;
+    margin-bottom: 17px;
+  }
+
+}
+
+.cart-button {
+  place-self: center;
+  grid-column: 1/5;
+  background-color: transparent;
+  cursor: pointer;
+
+  width: 235px;
+  height: 50px;
+  border: 1px solid #eaeaea;
+}
+
+//endregion
+
 /*region privileges*/
 .privileges {
   display: flex;
@@ -798,6 +855,8 @@ a {
 
 
 /*endregion*/
+
+//region footer
 
 /*region subscribe*/
 .subscribe {
@@ -882,7 +941,90 @@ a {
 
 /*endregion*/
 
-//region footer
+/*region subscribe*/
+
+.subscribe {
+  gap: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 448px;
+
+  background-image: url("../img/subscribe/background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+
+  color: rgb(34, 34, 36);
+
+  font-weight: 400;
+
+  .recall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 30vw;
+    gap: 20px;
+
+    font-style: italic;
+    font-size: 20px;
+    line-height: 23px;
+
+    &-img {
+      max-width: 5vw;
+      border-radius: 50%;
+    }
+  }
+
+  .subscribe_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    .subscribe-header {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .subscribe__text {
+      margin: 20px;
+    }
+
+    .subscribe__button {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      .input-button {
+        padding: 10px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        background: rgb(225, 225, 225);
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        background: $selectColor;
+        color: white;
+        cursor: pointer;
+
+      }
+    }
+
+
+  }
+}
+
+/*endregion*/
+
 .footer-block {
   display: flex;
   justify-content: space-around;
@@ -916,16 +1058,20 @@ a {
     color: $selectColor;
   }
 
-  .footer-menu__item {
+  &__item {
     display: block;
   }
 
-  .footer-menu__link {
+  &__link {
     font-size: 16px;
     line-height: 40px;
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #898989;
+  }
+
+  &__link:hover {
+    color: $selectColor;
   }
 }
 
@@ -945,6 +1091,10 @@ a {
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #7a7a7a;
+  }
+
+  &__link:hover g path {
+    fill: $selectColor;
   }
 }
 
