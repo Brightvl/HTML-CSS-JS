@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 100px;
+  background-color: forestgreen;
+}
+
+.content {
+  padding: 3% 2% 0;
+}
+
+.item-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  background-color: #ccc;
+}
+
+.item-1 {
+  width: 65%;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("img_adaptive/game-img (1).jpg");
+}
+
+.item-parent {
+  width: 32%;
+}
+
+.item-2 {
+  margin-bottom: 40px;
+}
+
+.item-2,
+.item-3 {
+  min-height: 180px;
+}
+
+.img-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-flex img {
+  width: 100%;
+}
+
+.img-left-box {
+  width: 65%;
+}
+
+.img-right-box {
+  width: 31%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.product-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 32%;
+  min-height: 350px;
+  background-color: brown;
+  margin-bottom: 3%;
+}
+
+.figcaption {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.rew-flex {
+  display: flex;
+}
+
+.rew-box {
+  flex-grow: 1;
+  padding: 0 3%;
+}
+
+.rew-img {
+  height: 200px;
+}
+
+.box-rew-img {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .item-flex {
+    flex-wrap: wrap;
+  }
+  .item-1 {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .item-parent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .item-2 {
+    margin-bottom: 0;
+  }
+  .item-2,
+  .item-3,
+  .product {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .rew-flex {
+    flex-direction: column;
+  }
+  .rew-box {
+    display: flex;
+    padding-bottom: 3%;
+  }
+  .box-rew-img {
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .item-1,
+  .item-2,
+  .item-3,
+  .img-flex img {
+    width: 100%;
+    min-height: 180px;
+    margin-bottom: 3%;
+  }
+  .img-left-box,
+  .img-right-box,
+  .product {
+    width: 100%;
+  }
+  .img-flex {
+    flex-wrap: wrap;
+  }
+  .item-parent {
+    flex-wrap: wrap;
+  }
+  .product {
+    min-height: 250px;
+  }
+  .rew-flex {
+    flex-direction: column;
+  }
+  .rew-box {
+    margin-bottom: 4%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
