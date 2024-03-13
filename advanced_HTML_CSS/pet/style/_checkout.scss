@@ -1,0 +1,58 @@
+//region checkout
+.checkout-box {
+  display: block;
+}
+
+.checkout-menu {
+
+
+}
+
+.checkout-menu:not(:last-of-type) {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.checkout-summary {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.checkout-txt {
+  &__header {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222222;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #b3b2b2;
+  }
+}
+
+.checkout-button {
+  place-self: center;
+  grid-column: 1/5;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4a4a4a;
+
+  width: 180px;
+  height: 50px;
+
+  border: 1px solid #eaeaea;
+}
+
+//endregion

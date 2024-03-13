@@ -1,0 +1,55 @@
+/*region offer*/
+.offer {
+  display: grid;
+  grid-template:
+    "men women" 1fr
+    "accessories kids" 1fr  / 1fr 1fr;
+
+  gap: 20px;
+  margin-block: 5%;
+
+  .image-container {
+    position: relative;
+    min-width: 100%;
+    overflow: hidden;
+
+    .img {
+      width: 100%;
+    }
+
+    .background_block {
+      min-width: min-content;
+      height: max-content;
+      background: #F8F3F4;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 10%;;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+
+    }
+  }
+
+  .image-container1 {
+    grid-area: men;
+  }
+
+  .image-container2 {
+    grid-area: women;
+  }
+
+  .image-container4 {
+    grid-area: accessories;
+  }
+
+  .image-container4 {
+    grid-area: kids;
+  }
+}
+
+/*endregion*/

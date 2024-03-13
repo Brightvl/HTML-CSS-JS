@@ -1,0 +1,226 @@
+
+.header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+  border: 1px solid $baseBorder;
+  background-color: $baseBackgroundColor;
+
+  &_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &_position {
+      gap: 20px;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &__text {
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #3e3e40;
+
+  }
+
+  &_select-color {
+    color: $selectColor;
+  }
+}
+
+.header-form {
+  display: flex;
+}
+
+.button-site {
+  background-color: #f16d7f;
+  padding: 12px 19px;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #fff;
+    color: #f16d7f;
+    border: 1px solid #f16d7f;
+  }
+
+  &__text {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+//region menu
+.navigation {
+  border-top: 1px solid #ececec;
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none; //убирает toggle маркер
+  justify-content: center;
+
+  &__item {
+    position: relative;
+
+    &:hover .mega-box {
+      display: flex;
+    }
+
+    &__last:hover .mega-box {
+      right: 0;
+      left: auto;
+    }
+
+    &__last:hover .mega-box::before {
+      right: 50px;
+      left: auto;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__link:hover {
+    border-bottom: 1px solid $selectColor;
+    color: $selectColor;
+  }
+
+
+}
+
+.mega-box {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: auto;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: -6px;
+    left: 33px;
+    transform: rotate(45deg);
+    border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+  }
+
+
+  &__heading {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #232323;
+    width: 235px;
+    border-bottom: 1px solid #e8e8e8;
+
+  }
+
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #646464;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $selectColor;
+  }
+
+
+}
+
+//endregion
+
+//region breadcrumbs
+.top-head {
+  height: 148px;
+  background-color: #f8f3f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__heading {
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $selectColor;
+  }
+}
+
+.breadcrumbs {
+  &__ul {
+    list-style-type: none;
+    display: flex;
+
+  }
+
+  &__li:not(:last-child):after {
+    content: "/";
+    padding-inline: 8px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+
+  &__li:last-child .breadcrumbs__link {
+    font-weight: 700;
+    color: $selectColor;
+  }
+
+  &__link:hover {
+    color: $selectColor;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+}
+
+//endregion
+
