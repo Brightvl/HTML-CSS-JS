@@ -1,0 +1,170 @@
+//region carousel
+.carousel {
+  height: 613px;
+  background-color: #e8e8e8;
+  margin-bottom: 500px;
+
+
+  &-block {
+    height: 777px;
+    background-color: #f7f7f7;
+
+  }
+
+  &_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.carousel-text {
+  margin-top: 224px;
+  border-left: 12px solid #f16d7f;
+  float: left;
+  padding-left: 12px;
+
+  &__header {
+    color: #222222;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-bottom: 20px;
+  }
+
+  &__p {
+    color: #222222;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 31px;
+  }
+
+}
+
+.carousel__img {
+  height: 590px;
+
+  &_size {
+
+    height: 100%;
+  }
+}
+
+//endregion
+
+
+//region product card
+.description-card {
+  text-align: center;
+  width: 1141px;
+  height: 500px;
+
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  transform: translate(0, -50px);
+
+  &__button {
+    padding: 10px;
+    cursor: pointer;
+    color: $selectColor;
+    width: 537px;
+    height: 55px;
+    background-color: #ffffff;
+    border: 1px solid $selectColor;
+  }
+
+}
+
+.product-text {
+  width: 60%;
+  margin-top: 50px;
+
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &_select-color {
+    color: $selectColor;
+  }
+
+  &__header {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid $selectColor;
+  }
+
+
+  &__name {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #4d4d4d;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #5e5e5e;
+  }
+
+  &__option {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &_first-color {
+      color: #b9b9b9;
+    }
+
+    &_last-color {
+      color: #2f2f2f;
+    }
+
+  }
+
+  &____price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ef5b70;
+  }
+
+
+}
+
+.choose {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+  }
+
+  & label {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #2f2f2f;
+  }
+}
+
+
+//endregion

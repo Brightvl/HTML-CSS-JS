@@ -1,0 +1,56 @@
+/*region privileges*/
+.privileges {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  background: rgb(34, 34, 36);
+  min-height: 341px;
+  margin-top: 5%;
+
+  &-img {
+    width: 100%;
+    height: 500px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &-box {
+    &_column {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      width: 800px;
+      margin: 50px;
+    }
+  }
+
+
+  &-card {
+    width: 400px;
+  }
+
+  &-text {
+    display: block;
+    color: rgb(251, 251, 251);
+    font-weight: 400;
+
+    &__header {
+      font-size: 19.96px;
+      line-height: 23px;
+    }
+
+    &__description {
+      font-size: 13.97px;
+      line-height: 16px;
+    }
+  }
+}
+
+
+/*endregion*/

@@ -1,0 +1,243 @@
+//region footer
+
+/*region subscribe*/
+.subscribe {
+  gap: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 448px;
+
+  background-image: url("../img/subscribe/background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+
+  color: rgb(34, 34, 36);
+
+  font-weight: 400;
+
+  .recall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 30vw;
+    gap: 20px;
+
+    font-style: italic;
+    font-size: 20px;
+    line-height: 23px;
+
+    &-img {
+      max-width: 5vw;
+      border-radius: 50%;
+    }
+  }
+
+  .subscribe_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    .subscribe-header {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .subscribe__text {
+      margin: 20px;
+    }
+
+    .subscribe__button {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      .input-button {
+        padding: 10px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        background: rgb(225, 225, 225);
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        background: $selectColor;
+        color: white;
+        cursor: pointer;
+
+      }
+    }
+
+
+  }
+}
+
+/*endregion*/
+
+/*region subscribe*/
+
+.subscribe {
+  gap: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 448px;
+
+  background-image: url("../img/subscribe/background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+
+  color: rgb(34, 34, 36);
+
+  font-weight: 400;
+
+  .recall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 30vw;
+    gap: 20px;
+
+    font-style: italic;
+    font-size: 20px;
+    line-height: 23px;
+
+    &-img {
+      max-width: 5vw;
+      border-radius: 50%;
+    }
+  }
+
+  .subscribe_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    .subscribe-header {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .subscribe__text {
+      margin: 20px;
+    }
+
+    .subscribe__button {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      .input-button {
+        padding: 10px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        background: rgb(225, 225, 225);
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        background: $selectColor;
+        color: white;
+        cursor: pointer;
+
+      }
+    }
+
+
+  }
+}
+
+/*endregion*/
+
+.footer-block {
+  display: flex;
+  justify-content: space-around;
+  margin-block: 50px;
+}
+
+.footer-navigation {
+  display: flex;
+  gap: 100px;
+}
+
+.info-map {
+
+  &__text {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    color: #898989;
+    width: 500px;
+  }
+}
+
+.footer-menu {
+  &__heading {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    color: $selectColor;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #898989;
+  }
+
+  &__link:hover {
+    color: $selectColor;
+  }
+}
+
+
+.copyright {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+  height: 79px;
+  background-color: #e6e6e6;
+
+  &__text {
+    font-size: 16px;
+    line-height: 42px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #7a7a7a;
+  }
+
+  &__link:hover g path {
+    fill: $selectColor;
+  }
+}
+
+//endregion

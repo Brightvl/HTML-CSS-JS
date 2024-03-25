@@ -1,0 +1,36 @@
+/*region banner*/
+.banner {
+
+
+  &__index {
+    @include centerFlex;
+    justify-content: start;
+
+    background-color: #e8e8e8;
+    background-image: url('../img/banner/smile_man.jpg');
+
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+
+    height: 665px;
+  }
+}
+
+.banner__text {
+  display: flex;
+  margin-left: 10%;
+  gap: 10px;
+  text-align: left;
+
+  min-font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.banner_rectangle {
+  min-width: 12px;
+  background: $selectColor;
+}
+
+/*endregion*/
