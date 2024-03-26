@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="alert('товар добавлен')">купить</button>
+<a onclick="confirm('закрыть диалог')" href="#" class="">ссылка</a>
+<script>
+    let userAnswer = prompt("зимой и летом одним цветом");
+    // if (userAnswer === "") {
+    //     console.log("пусто");
+    // } else {
+    //     if (userAnswer === "елка") {
+    //         alert("молодец")
+    //     } else {
+    //         alert("не угадал")
+    //     }
+    //     console.log(userAnswer);
+    // }
+
+    // if (userAnswer === "") {
+    //     console.log("пустое значение");
+    // } else if (userAnswer === "елка") {
+    //     alert("молодец")
+    // } else {
+    //     alert("не угадал")
+    // }
+
+    alert((userAnswer === "") ? "молодец" : "не угадал");
+</script>
+
+</body>
+</html>
