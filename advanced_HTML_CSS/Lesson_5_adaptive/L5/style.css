@@ -1,0 +1,20 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  gap: 16px;
+  padding-left: calc(50% - 500px);
+  padding-right: calc(50% - 500px);
+  grid-auto-flow: dense;
+}
+
+.item {
+  border: 1px solid #000000;
+  min-height: 100px;
+}
+.item_3 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/*# sourceMappingURL=style.css.map */
