@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="L6.css">
+</head>
+<body>
+<h1 class="title">Lorem ipsum duptatum.</h1>
+<h2 id="heading">Lorem ipsum dolor sit amet.</h2>
+<ul class="ul">
+    <li class="list">text 1</li>
+    <li class="list">text 2</li>
+    <li class="list">text 3</li>
+</ul>
+<p class="text">Lorem ipsum dolor. 1</p>
+<p class="text">Lorem ipsum dolor. 2</p>
+<p class="text">Lorem ipsum dolor. 3</p>
+
+<button class="btn">Купить</button>
+<div class="content">
+
+</div>
+<img class="img" src="photo.jpg" alt="photo">
+
+
+<script>
+    // СТАРЫЙ СПОСОБЫ поиска селекторов
+    // поймали класс в документе
+    const listEls = document.getElementsByClassName('list');
+    // поймали id в документе
+    const heading2 = document.getElementById('heading');
+    console.log(listEls);
+    console.log(heading2);
+
+    // НОРМАЛЬНЫЕ универсальные способы
+    // поймали один id в документе
+    const heading2QS = document.querySelector('#heading');
+    // поймали все классы в документе
+    const listElsQS = document.querySelectorAll('.list');
+    console.log(heading2QS);
+    console.log(listElsQS);
+
+    //Перебор текста
+    // listElsQS.forEach(el => console.log(el));
+
+    // Создание нового элемента html
+    const headingEl = document.createElement('h3');
+    //сразу не отобразится нужно добавить ноды
+    headingEl.textContent = 'Мой первый заголовок из js';
+
+
+    // поиск и замена контента
+    const titleEl = document.querySelector('.title');
+    titleEl.textContent = 'Заголовок из JS'
+
+    //удаление элемента
+    heading2QS.remove();
+
+
+</script>
+
+<script>
+    const buttonEl = document.querySelector('.btn');
+    const contentEl = document.querySelector('.content');
+    const imgEl = document.querySelector('.img');
+
+    //смена ссылки на фото при нажатии на фото
+    imgEl.onclick = function () {
+        imgEl.src = 'newPhoto.jpg';
+    };
+
+    const textEl = document.createElement('p');
+    textEl.textContent = 'Тут любой текст';
+
+    buttonEl.onclick = function () {
+        // по нажатию кнопки
+        buttonEl.textContent = 'Товар в корзине'; //смена текста в кнопке
+        contentEl.appendChild(textEl); // добавление текста
+    }
+</script>
+</body>
+</html>

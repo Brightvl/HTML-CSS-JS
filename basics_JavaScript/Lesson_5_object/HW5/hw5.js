@@ -9,7 +9,7 @@ const numbers = {
     keyin6: 6,
     keyin7: 7,
 }
-console.log(Object.values(numbers).filter(item => item >= 3));
+console.log("\nЗадание 1\n" + Object.values(numbers).filter(item => item >= 3));
 
 // Задание 2
 // Необходимо из объекта, который лежит в константе post вывести значения, к которым
@@ -40,9 +40,9 @@ const post =
             },
         ],
     };
-console.log(post.author)
-console.log(post.comments[0].rating.dislikes)
-console.log(post.comments[1].userId, post.comments[1].text)
+console.log("\nЗадание 2.1\n" + post.author)
+console.log("Задание 2.2\n" + post.comments[0].rating.dislikes)
+console.log("Задание 2.3\n" + post.comments[1].userId, post.comments[1].text)
 
 // Задание 3
 // Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя метод forEach.
@@ -61,6 +61,7 @@ const products = [
     },
 ];
 products.forEach(product => product.price *= 0.85);
+console.log("\nЗадание 3")
 console.log(products)
 
 // Задание 4
@@ -92,13 +93,25 @@ const product = [
         price: 78,
     },
 ];
-// 2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
+console.log("\nЗадание 4.1")
+console.log(product.filter(prod => prod.photos && prod.photos.length > 0));
 
+// 2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
+product.sort((a, b) => a.price - b.price);
+console.log("\nЗадание 4.2")
+console.log(product)
 
 // **Задание 5**
 // Дано 2 массива
 const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-
-
-// Вам необходимо объединить 2 этих массива, чтобы значения первого массива были ключами, а значения второго массива — значениями.
+// Вам необходимо объединить два этих массива, чтобы значения первого массива были ключами,
+// а значения второго массива — значениями.
+let week = {};
+if (en.length === ru.length) {
+    for (let i = 0; i < en.length; i++) {
+        week[en[i]] = ru[i];
+    }
+}
+console.log("\n**Задание 5**")
+console.log(week)
