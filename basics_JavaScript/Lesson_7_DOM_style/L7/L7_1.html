@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L7</title>
+</head>
+<body>
+<div class="content"></div>
+<style>
+    .heading {
+        color: blue;
+        text-transform: uppercase;
+        text-align: center;
+    }
+</style>
+
+<script>
+    const content = document.querySelector('.content');
+    const h1El = document.createElement('h1');
+    h1El.textContent = 'h1 element';
+    // h1El.style.backgroundColor = '#eee'; просто вариант добавления
+    h1El.setAttribute('class', 'heading')
+
+    const imgEl = document.createElement('img');
+    imgEl.src = 'photo.png';
+    imgEl.setAttribute('alt', 'описание картинки')
+
+    content.appendChild(h1El);
+    content.appendChild(imgEl);
+
+</script>
+</body>
+</html>

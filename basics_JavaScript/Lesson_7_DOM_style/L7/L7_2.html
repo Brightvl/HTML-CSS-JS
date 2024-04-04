@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul class="menu">
+    <li class="menu__list"><a href="" class="menu__link">link 1</a></li>
+    <li class="menu__list"><a href="" class="menu__link">link 2</a></li>
+    <li class="menu__list"><a href="" class="menu__link">link 3</a></li>
+    <li class="menu__list"><a href="" class="menu__link">link 4</a></li>
+</ul>
+
+<script>
+    const liEl = document.querySelectorAll('.menu__list');
+    const liElOne = document.querySelector('.menu__list');
+    const linkEl = document.querySelector('.menu__link');
+    const menuEl = document.querySelector('.menu');
+
+    // console.log(liEl);
+    // console.log(liElOne.parentNode.children);
+
+    // console.log(linkEl.children)
+    // console.log(linkEl.childNodes)
+
+    // console.log(menuEl.children)
+    // console.log(menuEl.childNodes)
+
+    menuEl.childNodes.forEach(el => {
+        console.log(el)
+    });
+</script>
+</body>
+</html>
