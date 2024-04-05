@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Пример использования DOM коллекций</title>
+</head>
+<body>
+<div class="content">
+    <p>Первый параграф</p>
+    <p>Второй параграф</p>
+    <p>Тритий параграф</p>
+</div>
+
+<script>
+    // Добавим следующий JavaScript-код на страницу или используем JavaScript-консоль браузера:
+    const divElement = document.querySelector('.content')
+    console.log(divElement.childNodes.length) // 7
+    console.log(divElement.children.length) // 3
+    // Коллекции childNodes и children имеют разную длину.
+    // Посмотрим, какие элементы содержатся в каждой коллекции. Чтобы перебрать элементы,
+    // сначала преобразуем коллекции в массивы с помощью статического метода Array.from или
+    // оператора spread.
+    Array.from(divElement.childNodes).forEach((childNode) => {
+        console.log('childNode "%s" типа "%d"', childNode.nodeName, childNode.nodeType)
+    });
+
+    [...divElement.children].forEach((child) => {
+        console.log('child "%s" типа "%d"', child.nodeName, child.nodeType)
+    })
+    // Коллекция children содержит только элементы P, в отличие от childNodes, где также есть
+    // текстовые ноды (переносы строк).
+    // Рассмотрим разницу между динамическими и статическими коллекциями:
+    const allParagraphElements = divElement.querySelectorAll('p')
+    console.log('Static NodeList длина до: %d', allParagraphElements.length)
+    console.log('Dynamic NodeList длина до: %d', divElement.childNodes.length)
+    console.log('HTMLCollection длина до: %d', divElement.children.length)
+    const fourthParagraphElement = document.createElement('p')
+    fourthParagraphElement.textContent = 'Четвертый параграф'
+    divElement.appendChild(fourthParagraphElement)
+    console.log('Static NodeList длина после: %d', allParagraphElements.length)
+    console.log('Dynamic NodeList длина после: %d', divElement.childNodes.length)
+    console.log('HTMLCollection длина после: %d', divElement.children.length)
+</script>
+</body>
+</html>
