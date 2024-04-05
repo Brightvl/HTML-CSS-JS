@@ -9,9 +9,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Brightvl/HTML-CSS-JS.git"
-  },
-  "private": true,
-  "dependencies": {
-    "prompt-sync": "^4.2.0"
   }
 }
