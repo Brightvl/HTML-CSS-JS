@@ -18,7 +18,18 @@
     // }
     //
     // console.log(max(...arr));
+    const maximum = findMax(4, 7, 10);
+
+    function findMax(...values) {
+        return values.reduce((acc, value) => {
+            if (value > acc) return value;
+            return acc;
+        }, -Infinity);
+    }
+
+    console.log(maximum)
+
 </script>
-<script src="spread.js"></script>
+<!--<script src="spread.js"></script>-->
 </body>
 </html>
