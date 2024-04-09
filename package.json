@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Brightvl/HTML-CSS-JS.git"
+  },
+  "dependencies": {
+    "jsdom": "^24.0.0"
   }
 }

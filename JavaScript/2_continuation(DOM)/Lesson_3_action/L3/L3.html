@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="button">Купить 1</button>
+<button class="button">Купить 2</button>
+<button class="button">Купить 3</button>
+
+<script>
+    const buttonEls = document.querySelectorAll('.button');
+    buttonEls.forEach(el => {
+        el.addEventListener('click', (event) => {
+            const target = event.target;
+            console.log(target);
+        });
+    });
+</script>
+
+<ul class="menu">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+
+<script>
+    const menuEl = document.querySelector('.menu');
+    const nameFunction = (e) => {
+        console.log(e.target, e.currentTarget);
+    };
+    menuEl.addEventListener('click', nameFunction);
+</script>
+
+
+<h1>Lorem ipsum dolor sit amet.</h1>
+<a class="link" href="https://yandex.ru">yandex</a>
+<input type="text" name="" id="">
+
+<script>
+    // load когда страница прогрузилась полностью
+    window.addEventListener('load', () => console.log('все загрузилось'));
+    // прогрузилось ли событие в DOM
+    document.addEventListener('DOMContentLoaded', () => console.log('loaded'))
+    //--------------------------
+    const buttonEl = document.querySelector('.button');
+    //навел
+    buttonEl.addEventListener('mouseover', () => console.log('Не нужно наводить, лучше нажми'));
+    //убрал от
+    buttonEl.addEventListener('mouseleave', () => console.log('Не нужно убегать'));
+    // кнопки на клаве
+    window.addEventListener('keydown', (ev) => {
+        console.log(ev.key);
+    });
+    // остановка перехода по ссылке
+    document.querySelector('.link').addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('hello link');
+    });
+    // перехват во время копирования
+    document.querySelector('h1').addEventListener('copy', ev => {
+        const copyTxt = document.getSelection().toString();
+        console.log(copyTxt);
+    });
+    // изменение размера
+    window.addEventListener('resize', ev => {
+        console.log('resize');
+    });
+    // входные значения
+    const inputEl = document.querySelector('input');
+    inputEl.addEventListener('input', ev => {
+        if (Number(ev.target.value) === 123) {
+            console.log('верно');
+        } else {
+            console.log('не верно');
+        }
+    });
+</script>
+
+<form action="#">
+    <input type="text" class="input">
+    <div class="error"></div>
+    <button type="submit">GO</button>
+</form>
+
+<script>
+    // подтверждение form
+    const inputText = document.querySelector('input');
+    const formRun = document.querySelector('form');
+    const errorEl = document.querySelector('.error');
+
+    formRun.addEventListener('submit', ev => {
+        if (inputText.value === '') {
+            ev.preventDefault();
+            errorEl.textContent = 'поле пустое';
+        }
+    });
+</script>
+
+</body>
+</html>
