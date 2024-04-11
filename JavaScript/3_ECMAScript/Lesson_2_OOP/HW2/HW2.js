@@ -22,14 +22,16 @@ class Book {
 //     Свойство age (возраст) - число, возраст студента.
 //     Свойство grade (класс) - строка, класс, в котором учится студент.
 //     Метод displayInfo() - выводит информацию о студенте (имя, возраст и класс).
-class Student{
+class Student {
     constructor(name, age, grade) {
         this.name = name;
         this.age = age;
         this.grade = grade;
     }
+
     displayInfo = () => console.log(`Student: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`);
 }
+
 // Пример использования класса
 const student1 = new Student("John Smith", 16, "10th grade");
 student1.displayInfo();
@@ -44,3 +46,4 @@ student2.displayInfo();
 // // Name: Jane Doe
 // // Age: 17
 // // Grade: 11th grade"
+
