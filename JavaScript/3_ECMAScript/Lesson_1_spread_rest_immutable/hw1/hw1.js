@@ -33,7 +33,6 @@ function findElementByClass(rootElement, nameOfClass) {
             findElementByClass(rootElement.children[i]);
         }
     }
-
 }
 const rootElement = document.getElementById('root');
 const targetElement = findElementByClass(rootElement, 'content');
