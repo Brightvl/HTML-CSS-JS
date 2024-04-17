@@ -11,6 +11,7 @@
     "url": "https://github.com/Brightvl/HTML-CSS-JS.git"
   },
   "dependencies": {
-    "jsdom": "^24.0.0"
+    "jsdom": "^24.0.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
