@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label><input type="radio" name="propagation-control"
+                  value="stopPropagation">Stop propagation</label>
+    <label><input type="radio" name="propagation-control"
+                  value="stopImmediatePropagation">Stop Immediate propagation</label>
+</form>
+<ul>
+    <li>Первый</li>
+    <li>Второй</li>
+    <li>Третий</li>
+</ul>
+<script>
+    // Прерывание распространения события
+    const form = document.forms[0]
+    const list = document.querySelector('ul')
+    list.addEventListener('click', (e) => {
+        console.log('В первом UL в фазе захвата')
+        const propagationControlMethodName =
+            form.elements['propagation-control'].value
+        if (propagationControlMethodName) {
+            e[propagationControlMethodName]()
+        }
+    }, true)
+    list.addEventListener('click', () => {
+        console.log('Во втором UL в фазе захвата')
+    }, true)
+    list.addEventListener('click', () => {
+        console.log('В первом UL в фазе всплытия')
+    })
+    Array.from(list.children).forEach((child) => {
+        child.addEventListener('click', () => {
+            console.log('В каждом LI в фазе всплытия')
+        })
+    })
+</script>
+
+</body>
+</html>

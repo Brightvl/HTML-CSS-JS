@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+Задание 1
+В html создать элемент checkbox и текст рядом с ним “Согласен с условиями”
+Добавить кнопку отправить
+При клике на кнопку отправить нужно проверять выбран ли активным элемент checkbox
+Если элемент не выбран, добавить текст под чекбоксом “Необходимо согласиться с условиями”
+-->
+<input type="checkbox" name="" id="agree"> Согласен с условиями
+<button id="submit">Отправить</button>
+<div id="message"></div>
+
+<script>
+    const checkbox = document.querySelector('#agree');
+    const submitBtn = document.querySelector('#submit');
+    const messageDiv = document.querySelector('#message');
+
+    function showMessage(msg, color) {
+        messageDiv.textContent = msg;
+        messageDiv.style.color = color;
+    }
+
+    function handleSubmit() {
+        if (!checkbox.checked) {
+            showMessage('Необходимо согласиться с условиями', 'red');
+        } else {
+            showMessage('Форма отправлена', 'green');
+        }
+    }
+
+    submitBtn.addEventListener('click', handleSubmit)
+</script>
+<!--
+Задание 2
+В html создать 2 элемента радио кнопки (input type=”radio”) и текст “Чай”, “Кофе” соответственно
+Кнопка отправить
+Если выбран чай, необходимо вывести сообщение “Чай закончился”
+Если выбран кофе, необходимо вывести соообщение “кофе закончился”
+-->
+<input type="radio" name="drink" value="tea">Чай
+<input type="radio" name="drink" value="coffee">Кофе
+<button class="btn2">Отправить</button>
+
+<script>
+    const teaBtn = document.querySelector(`input[value='tea']`);
+    const coffeeBtn = document.querySelector(`input[value='coffee']`);
+    const submitBtn2 = document.querySelector(`.btn2`);
+
+    function getChecked() {
+        if (teaBtn.checked) {
+            alert('Чай закончился');
+        } else if (coffeeBtn.checked) {
+            alert('Кофе закончился');
+        }
+    }
+
+    submitBtn2.addEventListener('click', getChecked)
+</script>
+<!--
+Задание 3.
+Создать поле ввода (пароль)
+Кнопка отправить
+Если пользователь вводит текст “пароль” то поле ввода должно быть подсвечено зеленым цветом
+Если пароль неверный, у поля ввода появляется красная обводка и текст “пароль неверный”
+-->
+<!--из за get и post запросов делаем form-->
+<form>
+    <input id="password-field" type="password"  placeholder="Введите пароль">
+    <button id="submit-button">Отправить</button>
+    <p id="message3"></p>
+</form>
+
+<script>
+    const form = document.querySelector('form');
+    const passwordField = document.querySelector('#password-field');
+    const submitBtn3 = document.querySelector('#submit-button');
+    const message = document.querySelector('#message3');
+
+    form.style.margin = '300px';
+
+    form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+
+        if (passwordField.value === 'пароль') {
+            // message.style.color = 'green';
+            // message.textContent = 'Пароль верный';
+            passwordField.style.borderColor = 'green';
+            passwordField.style.borderWidth = '3px';
+            passwordField.setCustomValidity('Пароль верный');
+        } else {
+            // message.style.color = 'red';
+            // message.textContent = 'Пароль неверный';
+            passwordField.style.borderColor = 'red';
+            passwordField.style.borderWidth = '3px';
+            passwordField.setCustomValidity('Пароль неверный');
+        }
+        passwordField.reportValidity();
+    });
+
+</script>
+<!--
+Задание 4.
+Создать поле ввода (пароль)
+Кнопка отправить
+Если пользователь вводит текст “пароль” то поле ввода должно быть под
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
