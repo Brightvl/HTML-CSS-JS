@@ -2,7 +2,7 @@
 // 2. Также необходимо вынести запуск скрипта в скрипты запуска NPM,
 // для того, чтобы можно было запускать скрипт с помощью команды
 // npm run start.
-// в package.json строка запуска скрипта "nodeS2Run": "node ./JavaScript/4_NodeJS/Lesson_2_NPM/s2/run.js"
+// в package.json строка запуска скрипта "nodeS2Run": "node ./JavaScript/4_NodeJS/Lesson_2_NPM/s2/run"
 // далее можно запустить скрипт из корня проекта npm run nodeS2Run
 
 const {calculateResultSum} = require('./calculateResultSum') // Важно развернуть (деструктуризировать) обязательно наш

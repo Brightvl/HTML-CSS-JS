@@ -17,6 +17,7 @@
     "colors": "^1.4.0",
     "jsdom": "^24.0.0",
     "number-precision": "^1.6.0",
+    "random-data-generator-brightvl": "^1.0.0",
     "uuid": "^9.0.1",
     "xmlhttprequest": "^1.8.0"
   }
