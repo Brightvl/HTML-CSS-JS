@@ -23,23 +23,21 @@ function onRequest(req, res) {
     if (url === '/') {
         res.writeHead(200, text);
         // страница Home
-        res.write(`
+        res.end(`
             <body>
                 <h1>Home Page</h1>
                 <p>Views: ${pageCounter[url]}</p>
                 <a href="/about">About Page</a>
             </body>`);
-        res.end();
         // страница about
     } else if (url === '/about') {
         res.writeHead(200, text);
-        res.write(`
+        res.end(`
             <body>
                 <h1>About Page</h1>
                 <p>Views: ${pageCounter[url]}</p>
                 <a href="/">Home Page</a>
             </body>`);
-        res.end();
     } else {
         // Обработка несуществующих маршрутов
         res.writeHead(404, text);
