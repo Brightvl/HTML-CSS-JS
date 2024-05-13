@@ -6,8 +6,7 @@
 </head>
 <body>
 
-<!--
-Задание 1
+<!--Задание 1
 В html создать элемент checkbox и текст рядом с ним “Согласен с условиями”
 Добавить кнопку отправить
 При клике на кнопку отправить нужно проверять выбран ли активным элемент checkbox
@@ -37,8 +36,7 @@
 
     submitBtn.addEventListener('click', handleSubmit)
 </script>
-<!--
-Задание 2
+<!--Задание 2
 В html создать 2 элемента радио кнопки (input type=”radio”) и текст “Чай”, “Кофе” соответственно
 Кнопка отправить
 Если выбран чай, необходимо вывести сообщение “Чай закончился”
@@ -72,9 +70,9 @@
 -->
 <!--из за get и post запросов делаем form-->
 <form>
-    <input id="password-field" type="password"  placeholder="Введите пароль">
+    <input id="password-field" type="password" placeholder="Введите пароль">
     <button id="submit-button">Отправить</button>
-    <p id="message3"></p>
+    <button id="togglePassword">Показать пароль</button>
 </form>
 
 <script>
@@ -83,9 +81,13 @@
     const submitBtn3 = document.querySelector('#submit-button');
     const message = document.querySelector('#message3');
 
+    const togglePasswordButton = document.querySelector('#togglePassword');
+    togglePasswordButton.style.display = 'none';
+
     form.style.margin = '300px';
 
-    form.addEventListener('submit', (ev) => {
+
+    form.addEventListener('click', (ev) => {
         ev.preventDefault();
 
         if (passwordField.value === 'пароль') {
@@ -104,17 +106,52 @@
         passwordField.reportValidity();
     });
 
-</script>
-<!--
-Задание 4.
-Создать поле ввода (пароль)
-Кнопка отправить
-Если пользователь вводит текст “пароль” то поле ввода должно быть под
+    passwordField.addEventListener('input', () => {
+        if (passwordField.value.trim() === '') {
+            togglePasswordButton.style.display = 'none';
+        } else {
+            togglePasswordButton.style.display = 'inline-block'
         }
+    });
+
+    togglePasswordButton.addEventListener('click', () => {
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        togglePasswordButton.textContent = type === 'password' ? 'Показать пароль' : 'Скрыть пароль';
+
     });
 
 </script>
 
+<!--
+Задание 4.
+Создать поле ввода и под ним заголовок h1 с текстом “Заголовок”
+При вводе текста в поле ввода необходимо чтобы текст внутри
+заголовка меняется на введенный в поле ввода
+-->
+<input type="text" id="input" maxlength="6" placeholder="Введите новый заголовок">
+<h1 id="header"></h1>
+
+<script>
+    const input = document.querySelector('#input');
+    const header = document.querySelector('#header');
+
+    const validInput = () => {
+        const inputValue = input.value;
+        const digits = inputValue.match(/\d/g);
+        const letters = inputValue.match(/[a-zA-Z]/g);
+
+        if (digits && digits.length === 3 && letters && letters.length === 3) {
+            header.innerText = inputValue;
+            header.style.color = 'black';
+        } else {
+            header.innerText = 'Текст должен содержать только 3 цифры и 3 буквы';
+            header.style.color = 'red';
+        }
+    };
+
+    input.addEventListener('input', validInput);
+</script>
 
 </body>
 </html>
