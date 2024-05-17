@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^1.6.8",
     "colors": "^1.4.0",
+    "express": "^4.19.2",
     "jsdom": "^24.0.0",
     "number-precision": "^1.6.0",
     "random-data-generator-brightvl": "^1.0.0",
