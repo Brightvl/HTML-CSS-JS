@@ -1,26 +1,31 @@
 const express = require('express');
 
-
 const checkUser = require('./validation/validator');
 const userScheme = require('./validation/scheme');
 let {users, uniqueID,writeJson} = require('./data/json');
 
-
 const app = express();
-
-
 app.use(express.json());
 
+/**
+ * Получить всех пользователей
+ */
 app.get('/users', (req, res) => {
     res.send({users});
 });
 
+/**
+ * Получить пользователя по id
+ */
 app.get('/users/:id/', (req, res) => {
     const user = users.find(user => user.id === +req.params.id);
     if (!user) return res.status(404).send({error: 'User not found'});
     res.send({user});
 });
 
+/**
+ * Создать пользователя
+ */
 app.post('/users', (req, res) => {
     console.log(req.body);
     uniqueID++;
@@ -33,6 +38,9 @@ app.post('/users', (req, res) => {
     res.send({id: uniqueID});
 });
 
+/**
+ * Обновить пользователя
+ */
 app.put('/users/:id', checkUser(userScheme), (req, res) => {
     console.log(req.body);
     const user = users.find(user => user.id === +req.params.id);
@@ -49,6 +57,9 @@ app.put('/users/:id', checkUser(userScheme), (req, res) => {
     res.send(user);
 })
 
+/**
+ * Удалить пользователя
+ */
 app.delete('/users/:id/', (req, res) => {
     const user = users.find(user => user.id === +req.params.id);
 
@@ -61,10 +72,16 @@ app.delete('/users/:id/', (req, res) => {
     res.send({user});
 });
 
+/**
+ * Обработать все неизвестные запросы
+ */
 app.use((req, res) => {
     res.status(404).send({
         message: "URL not found"
     })
 });
 
+/**
+ * Запуск сервера
+ */
 app.listen(3000);
