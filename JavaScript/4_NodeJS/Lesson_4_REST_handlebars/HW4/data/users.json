@@ -33,5 +33,26 @@
     "secondName": "Puprin",
     "city": "Moscow",
     "age": 25
+  },
+  {
+    "id": 7,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  },
+  {
+    "id": 8,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  },
+  {
+    "id": 9,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
   }
 ]

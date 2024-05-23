@@ -1,24 +1,13 @@
 const express = require('express');
-const fs = require(`fs`);
-const path = require(`path`);
+
 
 const checkUser = require('./validation/validator');
 const userScheme = require('./validation/scheme');
+let {users, uniqueID,writeJson} = require('./data/json');
+
 
 const app = express();
 
-const filePath = path.join(__dirname, `data/users.json`);
-
-let users;
-try {
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    users = JSON.parse(fileContent);
-} catch (error) {
-    users = []
-}
-
-
-let uniqueID = users.length > 0 ? Math.max(...users.map(user => user.id)) : 0;
 
 app.use(express.json());
 
@@ -40,7 +29,7 @@ app.post('/users', (req, res) => {
         ...req.body
     });
 
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+    writeJson()
     res.send({id: uniqueID});
 });
 
@@ -56,7 +45,7 @@ app.put('/users/:id', checkUser(userScheme), (req, res) => {
     user.city = city;
     user.age = age;
 
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+    writeJson()
     res.send(user);
 })
 
@@ -68,7 +57,7 @@ app.delete('/users/:id/', (req, res) => {
     const articleIndex = users.indexOf(user);
     users.splice(articleIndex, 1);
 
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+    writeJson()
     res.send({user});
 });
 
