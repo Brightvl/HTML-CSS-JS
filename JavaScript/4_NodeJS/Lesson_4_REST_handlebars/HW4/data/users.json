@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  },
+  {
+    "id": 2,
+    "firstName": "Vasya",
+    "secondName": "Puprыin",
+    "city": "Ansadasapa",
+    "age": 25
+  },
+  {
+    "id": 4,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  },
+  {
+    "id": 5,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  },
+  {
+    "id": 6,
+    "firstName": "Vasya",
+    "secondName": "Puprin",
+    "city": "Moscow",
+    "age": 25
+  }
+]
