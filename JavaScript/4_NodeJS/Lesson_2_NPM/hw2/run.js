@@ -26,7 +26,7 @@ console.log(randomNumber);
 //   "name": "random-data-generator-brightvl",
 //   "version": "1.0.0",
 //   "description": "",
-//   "main": "index.js",
+//   "main": "productCard.js",
 //   "scripts": {
 //     "test": "echo \"Error: no test specified\" && exit 1"
 //   },
