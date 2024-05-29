@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<audio class="audio"
+       controls
+       src="https://cdndl.zaycev.net/track/24922020/2xPvkchhA5BNpdjEQ2fzd3fPCZBARquy7FgooBKBgk513fyzusXeGzMxbVEFN5YLuGE6ha99vFKXnWW6MTnBrfWXThAkBqjFadUVAfqzCZnVDdULFyDvouByjKCxnjQ8rivFoXZsZPoTcNgsbpsMAHphrPPrmUhxHWoqRwkzMgKw9aJq4cUNyNN5wtbLrzmFVzyYjF4ZEuL1yG3M2BhokNgoFSdak5DPiAVqnawfZBckocS6qzE2B4GnRWnp9dkkznRAU14ckyodoyj6rKSrguibm7whfp5StJDSg9W73YNgASYmanzfqgHrYthJ2Bww4gdxSiZvWHgCqazsoZBahFs5VH7WhkiY9b9ZPrTZN8A8CKK1RY29H7yFiCkds6uKwtStT8GNE6"
+       preload="auto"></audio>
+
+
+<script>
+    const audioEl = document.querySelector('.audio');
+    audioEl.addEventListener('play', el => {
+        console.log('play')
+    });
+
+    audioEl.addEventListener('pause', el => {
+        console.log('пауза')
+    });
+</script>
+</body>
+</html>
