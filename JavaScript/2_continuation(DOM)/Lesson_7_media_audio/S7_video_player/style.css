@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.video-box {
+    width: 600px;
+    margin-top: 100px;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+.current__time {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+.current__time {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.controls {
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+.fa-play {
+    padding: 10px;
+}
+.fa-pause {
+    padding: 10px;
+}
+.volume__panel {
+    margin-left: 300px;
+}
+.video {
+    height: 600px;
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ef49875e4d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="video-box">
+    <p>Текущее время <span class="current__time">00:00</span></p >
+    <video class="video" src="https://cs13.pikabu.ru/video/2024/05/28/1716878471248638488_2ac93b81_800x848.mp4"></video>
+    <input type="range" value="0" class="timing">
+</div>
+<div class="controls">
+    <div class="control__btn">
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pause"></i>
+    </div>
+    <div class="volume__panel">
+        <input type="range" min="0" max="1" step="0.01" class="volume">
+        <span class="volume__level">5</span>
+    </div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
