@@ -10,8 +10,8 @@ export async function displayCatalogCard(url, classEl) {
                 <a href="#" class="catalog-item__link">
                     <img class="catalog-item__img" src="${el.image}" alt="item">
                     <div class="txt__box">
-                        <p class="txt__description">Mango People T-shirt</p>
-                        <p class="catalog-item__price">$52.00</p>
+                        <p class="txt__description">${el.name}</p>
+                        <p class="catalog-item__price">$${el.price}</p>
                     </div>
                 </a>
                 <div class="add-box">
@@ -23,10 +23,11 @@ export async function displayCatalogCard(url, classEl) {
             </div>`);
         });
 
-        // Добавление обработчиков событий для изменения количества
+
+// Добавление обработчиков событий для изменения количества
         const quantityInputs = document.querySelectorAll('.input__quantity');
         quantityInputs.forEach(input => {
-            input.addEventListener('input', function() {
+            input.addEventListener('input', function () {
                 const quantity = parseInt(this.value);
                 const productContent = this.closest('.product__content');
                 const priceElement = productContent.querySelector('.product__price');
@@ -37,4 +38,3 @@ export async function displayCatalogCard(url, classEl) {
         });
     }
 }
-
