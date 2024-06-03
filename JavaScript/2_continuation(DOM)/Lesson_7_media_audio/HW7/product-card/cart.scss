@@ -10,10 +10,10 @@
 
 .product {
   position: relative;
-
+  width: 652px;
+  margin: 20px;
   .product__content {
     display: flex;
-    width: 652px;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.15);
   }
 
@@ -80,6 +80,6 @@
   background: none;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../resource/img/svg/cross.svg);
+  background-image: url('./resource/img/svg/cross.svg');
   cursor: pointer;
 }
