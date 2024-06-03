@@ -24,17 +24,5 @@ export async function displayCatalogCard(url, classEl) {
         });
 
 
-// Добавление обработчиков событий для изменения количества
-        const quantityInputs = document.querySelectorAll('.input__quantity');
-        quantityInputs.forEach(input => {
-            input.addEventListener('input', function () {
-                const quantity = parseInt(this.value);
-                const productContent = this.closest('.product__content');
-                const priceElement = productContent.querySelector('.product__price');
-                const unitPrice = parseFloat(priceElement.dataset.unitPrice);
-                const totalPrice = (unitPrice * quantity).toFixed(2);
-                priceElement.textContent = `$${totalPrice}`;
-            });
-        });
     }
 }
