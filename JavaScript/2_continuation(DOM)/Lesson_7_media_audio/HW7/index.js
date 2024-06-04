@@ -1,6 +1,9 @@
 import { displayAllCatalogCard } from './catalog/catalogCard.js';
 import { displayProductCard } from './product-card/productCard.js';
 
+/**
+ * Отображение появится при полной загрузке DOM структуры
+ */
 document.addEventListener("DOMContentLoaded", () => {
     const catalogBox = document.querySelector('.catalog__box');
     const cartBox = document.querySelector('.cart__box');
@@ -21,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
             name: catalogItem.querySelector('.txt__description').innerText,
             image: catalogItem.querySelector('.catalog-item__img').src,
             price: parseFloat(catalogItem.querySelector('.catalog-item__price').innerText.replace('$', '')),
-            color: 'Default', // Замените на соответствующее значение, если имеется
-            size: 'Default', // Замените на соответствующее значение, если имеется
+            color: 'Default',
+            size: 'Default',
             quantity: 1,
-            max: 10 // Замените на соответствующее значение, если имеется
+            max: 10
         };
 
         displayProductCard(productData, cartBox);
