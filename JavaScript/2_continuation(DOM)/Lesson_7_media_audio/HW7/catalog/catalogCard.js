@@ -1,5 +1,3 @@
-// catalog/catalogCard.js
-
 import { fetchData } from '../resource/json/json.js';
 
 export async function displayAllCatalogCard(url, classEl) {

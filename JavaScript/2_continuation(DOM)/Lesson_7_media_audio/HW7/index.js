@@ -1,5 +1,3 @@
-// index.js
-
 import { displayAllCatalogCard } from './catalog/catalogCard.js';
 import { displayProductCard } from './product-card/productCard.js';
 

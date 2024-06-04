@@ -1,5 +1,3 @@
-// product-card/productCard.js
-
 export function displayProductCard(data, DOMel) {
     if (data) {
         DOMel.insertAdjacentHTML('beforeend', `
