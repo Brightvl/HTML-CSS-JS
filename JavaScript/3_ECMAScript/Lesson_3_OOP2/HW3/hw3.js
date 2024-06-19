@@ -17,7 +17,8 @@ class Manager extends Employee {
         super(name);
         this.department = department;
     }
-    // Метод displayInfo() - переопределяет метод displayInfo() родительского класса и выводит информацию о менеджере (имя и отдел).
+    // Метод displayInfo() - переопределяет метод displayInfo() родительского класса и выводит информацию о
+    // менеджере (имя и отдел).
     displayInfo() {
         console.log(`Name: ${this.name} Department: ${this.department}`);
     }
@@ -61,7 +62,6 @@ class Order {
     }
 }
 
-// Пример использования класса
 class Product {
     constructor(name, price) {
         this.name = name;
