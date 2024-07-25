@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>First element?</div>
+Text element
+<br>
+<span>
+        <span>grandchild element</span>
+</span>
+<div>Last element?</div>
+<script>
+
+    // console.log(document.documentElement);  // тег <html>
+    // console.log(document.body);  // тег <body>
+    // console.log(document.head);  // тег <head>
+
+    // console.log(document.body.firstChild);
+    // console.log(document.body.lastChild);
+    // console.log(document.body.childNodes);
+    // console.log(document.body.children);
+
+    // Сделаем в переборе коллекции вывод проверки, является ли он div
+    // for (let val of document.body.children) {
+    //     console.log(val.localName === 'div' ? "Это DIV" : "Это не DIV");
+    // }
+
+    // обозначения в цифровом виде элементов DOM
+    // for (let val of document.body.childNodes) {
+    //     console.dir(val.nodeType);
+    // }
+
+    // Описание
+    // https://dom.spec.whatwg.org/#node
+
+    for (let val of d9ocument.body.childNodes) {
+        console.dir(val.nodeValue);
+    }
+</script>
+</body>
+</html>
