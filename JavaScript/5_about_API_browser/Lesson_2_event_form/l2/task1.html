@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .price, .rating {
+            margin-bottom: 20px;
+        }
+        .price div, .rating div {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="price">
+    <div data-price="25">Товар 1</div>
+    <div data-price="50">Товар 2</div>
+    <div data-price="75">Товар 3</div>
+    <div data-price="100">Товар 4</div>
+</div>
+
+<div class="rating">
+    <div data-rating="5">Товар 1</div>
+    <div data-rating="3">Товар 2</div>
+    <div data-rating="4">Товар 3</div>
+    <div data-rating="2">Товар 4</div>
+</div>
+
+<script>
+    /**
+     * Фильтрует элементы по заданному атрибуту и максимальному значению.
+     * @param {string} attributeName - Имя атрибута для фильтрации.
+     * @param {number} maxValue - Максимально допустимое значение атрибута.
+     */
+    const filterElementsByDataAttribute = (attributeName, maxValue) => {
+        // Получаем все элементы с заданным атрибутом и преобразуем NodeList в массив
+        const elements = Array.from(document.querySelectorAll(`[${attributeName}]`));
+        elements.forEach(element => {
+            // Получаем значение атрибута и приводим его к числу
+            const value = parseFloat(element.getAttribute(attributeName));
+            // Если значение больше максимального, скрываем элемент
+            if (value > maxValue) {
+                element.style.display = 'none';
+            }
+        });
+    };
+
+    // Пример использования:
+    filterElementsByDataAttribute('data-price', 50);
+
+    /**
+     * Сортирует элементы по заданному атрибуту в порядке убывания и переставляет их на странице.
+     * @param {string} attributeName - Имя атрибута для сортировки.
+     */
+    const sortElementsByDataAttribute = attributeName => {
+        // Получаем контейнер с элементами для сортировки
+        const container = document.querySelector('.rating');
+        // Получаем все элементы с заданным атрибутом и преобразуем NodeList в массив
+        const elements = Array.from(container.querySelectorAll(`[${attributeName}]`));
+        // Сортируем элементы по значению атрибута в порядке убывания
+        elements.sort((a, b) => {
+            const valueA = parseInt(a.getAttribute(attributeName));
+            const valueB = parseInt(b.getAttribute(attributeName));
+            return valueB - valueA;
+        });
+        // Перемещаем элементы в контейнер в новом порядке
+        elements.forEach(element => {
+            container.appendChild(element);
+        });
+    };
+
+    // Пример использования:
+    sortElementsByDataAttribute('data-rating');
+</script>
+
+</body>
+</html>

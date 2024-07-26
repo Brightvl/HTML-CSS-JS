@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бесконечный веб-слайдер</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slider-container {
+            position: relative;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .slider-image.active {
+            display: block;
+        }
+
+        .navigation-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev-button {
+            left: 0;
+        }
+
+        .next-button {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="slider-container">
+    <button class="slider-button prev-button">&lt;</button>
+    <div id="image-container"></div>
+    <button class="slider-button next-button">&gt;</button>
+    <div class="navigation-dots" id="navigation-dots"></div>
+</div>
+
+<script>
+    const imageContainer = document.getElementById('image-container'); // Контейнер для изображений
+    const navigationDots = document.getElementById('navigation-dots'); // Контейнер для навигационных точек
+    const imageCount = 10; // Количество изображений для загрузки
+    let currentIndex = 0; // Текущий индекс активного изображения
+    let images = []; // Массив для хранения загруженных изображений
+
+    async function fetchImages() {
+        // Загрузка изображений и создание соответствующих элементов на странице
+        for (let i = 0; i < imageCount; i++) {
+            const imgElement = document.createElement('img');
+            imgElement.src = `https://picsum.photos/600/400?random=${i}`;
+            imgElement.className = 'slider-image';
+            if (i === 0) {
+                imgElement.classList.add('active'); // Активное изображение по умолчанию
+            }
+            imageContainer.appendChild(imgElement);
+
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            if (i === 0) {
+                dot.classList.add('active'); // Активная точка по умолчанию
+            }
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => showImage(i)); // Добавление обработчика клика на точку
+            navigationDots.appendChild(dot);
+
+            images.push(imgElement); // Добавление изображения в массив
+        }
+    }
+
+    function showImage(index) {
+        // Показ изображения по заданному индексу
+        images[currentIndex].classList.remove('active'); // Убираем класс 'active' у текущего изображения
+        navigationDots.children[currentIndex].classList.remove('active'); // Убираем класс 'active' у текущей точки
+        currentIndex = index; // Обновляем текущий индекс
+        images[currentIndex].classList.add('active'); // Добавляем класс 'active' новому изображению
+        navigationDots.children[currentIndex].classList.add('active'); // Добавляем класс 'active' новой точке
+    }
+
+    document.querySelector('.prev-button').addEventListener('click', () => {
+        // Обработчик клика на кнопку "Назад"
+        const newIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1; // Рассчитываем новый индекс
+        showImage(newIndex); // Показ изображения по новому индексу
+    });
+
+    document.querySelector('.next-button').addEventListener('click', () => {
+        // Обработчик клика на кнопку "Вперед"
+        const newIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // Рассчитываем новый индекс
+        showImage(newIndex); // Показ изображения по новому индексу
+    });
+
+    window.onload = fetchImages; // Загрузка изображений при загрузке страницы
+</script>
+</body>
+</html>

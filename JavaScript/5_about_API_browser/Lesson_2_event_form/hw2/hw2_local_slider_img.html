@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Веб-слайдер</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .slider-container {
+      position: relative;
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    .slider-image {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+    .slider-image.active {
+      display: block;
+    }
+    .navigation-dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #717171;
+    }
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev-button {
+      left: 0;
+    }
+    .next-button {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="slider-container">
+  <button class="slider-button prev-button">&lt;</button>
+  <img src="image1.jpg" class="slider-image active" alt="Image 1">
+  <img src="image2.jpg" class="slider-image" alt="Image 2">
+  <img src="image3.jpg" class="slider-image" alt="Image 3">
+  <img src="image4.jpg" class="slider-image" alt="Image 4">
+  <button class="slider-button next-button">&gt;</button>
+  <div class="navigation-dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+  </div>
+</div>
+
+<script>
+  const images = document.querySelectorAll('.slider-image');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+  }
+
+  document.querySelector('.prev-button').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    showImage(currentIndex);
+  });
+
+  document.querySelector('.next-button').addEventListener('click', () => {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    showImage(currentIndex);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      currentIndex = parseInt(e.target.dataset.index);
+      showImage(currentIndex);
+    });
+  });
+
+  window.onload = () => showImage(currentIndex);
+</script>
+</body>
+</html>
