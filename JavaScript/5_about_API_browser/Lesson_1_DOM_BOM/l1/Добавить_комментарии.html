@@ -1,0 +1,78 @@
+<!-- У вас есть дерево комментариев, представленное в виде вложенных элементов <div>.
+Каждый комментарий имеет кнопку "Ответить", при нажатии на которую открывается форма для написания ответа.
+Ваша задача - реализовать функциональность, чтобы при нажатии на кнопку "Ответить",
+только форма этого конкретного комментария открывалась, остальные формы оставались скрытыми. -->
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comment</title>
+</head>
+<body>
+<style>
+    .reply-form {
+        display: none; /* Скрываем все формы ответов по умолчанию */
+    }
+</style>
+
+<div class="comment">
+    <p>Комментарий 1</p>
+    <button class="reply-button">Ответить</button>
+    <form class="reply-form">
+        <textarea placeholder="Напишите ответ..."></textarea>
+        <button class="submit-button">Отправить</button>
+    </form>
+</div>
+
+<div class="comment">
+    <p>Комментарий 1.1</p>
+    <button class="reply-button">Ответить</button>
+    <form class="reply-form">
+        <textarea placeholder="Напишите ответ..."></textarea>
+        <button class="submit-button">Отправить</button>
+    </form>
+</div>
+
+<div class="comment">
+    <p>Комментарий 1.2</p>
+    <button class="reply-button">Ответить</button>
+    <form class="reply-form">
+        <textarea placeholder="Напишите ответ..."></textarea>
+        <button class="submit-button">Отправить</button>
+    </form>
+</div>
+
+
+<script>
+    // Находим все кнопки "Ответить"
+    const replyButtons = document.querySelectorAll('.reply-button');
+
+    // Добавляем обработчик события click для каждой кнопки "Ответить"
+    replyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Находим ближайший родительский элемент с классом "comment"
+            const comment = button.closest('.comment');
+            // Находим форму ответа внутри этого комментария
+            const replyForm = comment.querySelector('.reply-form');
+
+            // Скрываем все формы ответов
+            const allReplyForms = document.querySelectorAll('.reply-form');
+            allReplyForms.forEach(form => {
+                if (form !== replyForm) { // Если форма не является текущей
+                    form.style.display = 'none'; // Скрываем форму
+                }
+            });
+
+            // Отображаем форму ответа только для текущего комментария
+            replyForm.style.display = 'block';
+        });
+    });
+</script>
+
+</body>
+</html>

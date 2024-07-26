@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список статей</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .article {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">Список статей</h1>
+    <div id="articles"></div>
+    <button class="btn btn-primary" id="add-article">Добавить статью</button>
+</div>
+
+<script>
+    // 1. Вы создаете веб-страницу для отображения списка статей. Каждая статья состоит из заголовка и текста. Вам необходимо использовать Bootstrap для стилизации элементов.
+    // 2. Используйте Bootstrap, чтобы стилизовать элементы:
+    //     a. Заголовок статьи (<h2>)
+    //     b. Текст статьи (<p>)
+    //     c. Кнопки "Добавить статью", "Удалить" и "Редактировать".
+    // 3. Создайте начальный список статей, который будет загружаться при загрузке страницы. Используйте JSON-данные для определения заголовков и текстов статей.
+    // 4. Позвольте пользователю добавлять новые статьи. При нажатии на кнопку "Добавить статью" должна появиться новая статья с заголовком "Новая статья" и текстом "Введите содержание статьи...".
+    // 5. Реализуйте функциональность удаления статей. При нажатии на кнопку "Удалить" соответствующая статья должна быть удалена из списка.
+    // 6. Реализуйте функциональность редактирования статей. При нажатии на кнопку "Редактировать" пользователь должен иметь возможность изменить заголовок и текст статьи. Используйте всплывающее окно или prompt для ввода новых данных.
+    // 7. Все изменения (добавление, удаление, редактирование) должны быть сохранены в локальное хранилище браузера, чтобы они сохранялись после перезагрузки страницы.
+
+    // Начальный список статей, загружаемый при загрузке страницы
+    const initialArticles = [
+        {title: "Статья 1", content: "Содержание статьи 1"},
+        {title: "Статья 2", content: "Содержание статьи 2"}
+    ];
+
+    // Загрузка статей из локального хранилища и отображение их на странице
+    function loadArticles() {
+        const articlesContainer = document.getElementById('articles');
+        articlesContainer.innerHTML = '';
+        const articles = JSON.parse(localStorage.getItem('articles')) || initialArticles;
+        articles.forEach((article, index) => {
+            const articleElement = document.createElement('div');
+            articleElement.className = 'article card';
+            articleElement.innerHTML = `
+                <div class="card-body">
+                    <h2 class="card-title">${article.title}</h2>
+                    <p class="card-text">${article.content}</p>
+                    <button class="btn btn-danger" onclick="deleteArticle(${index})">Удалить</button>
+                    <button class="btn btn-secondary" onclick="editArticle(${index})">Редактировать</button>
+                </div>
+            `;
+            articlesContainer.appendChild(articleElement);
+        });
+    }
+
+    // Добавление новой статьи
+    function addArticle() {
+        const articles = JSON.parse(localStorage.getItem('articles')) || initialArticles;
+        articles.push({title: "Новая статья", content: "Введите содержание статьи..."});
+        localStorage.setItem('articles', JSON.stringify(articles));
+        loadArticles();
+    }
+
+    // Удаление статьи
+    function deleteArticle(index) {
+        let articles = JSON.parse(localStorage.getItem('articles')) || initialArticles;
+        articles.splice(index, 1);
+        localStorage.setItem('articles', JSON.stringify(articles));
+        loadArticles();
+    }
+
+    // Редактирование статьи
+    function editArticle(index) {
+        let articles = JSON.parse(localStorage.getItem('articles')) || initialArticles;
+        const newTitle = prompt("Введите новый заголовок", articles[index].title);
+        const newContent = prompt("Введите новое содержание", articles[index].content);
+        if (newTitle !== null && newContent !== null) {
+            articles[index] = {title: newTitle, content: newContent};
+            localStorage.setItem('articles', JSON.stringify(articles));
+            loadArticles();
+        }
+    }
+
+    // Обработчик для кнопки добавления статьи
+    document.getElementById('add-article').addEventListener('click', addArticle);
+
+    // Загрузка статей при загрузке страницы
+    window.onload = loadArticles;
+</script>
+</body>
+</html>

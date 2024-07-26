@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .task-input {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+        margin-top: 10px;
+    }
+
+    .add-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .add-button:hover {
+        background-color: #45a049;
+    }
+
+    .task-list {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .task-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .task-description {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .delete-button {
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+<body>
+
+<h1>Список дел</h1>
+<input type="text" class="task-input" placeholder="Добавить задачу">
+<button class="add-button">Добавить</button>
+<ul class="task-list"></ul>
+
+<script>
+    // Получаем ссылки на элементы ввода, кнопку добавления и список задач
+    const taskInput = document.querySelector('.task-input');
+    const addButton = document.querySelector('.add-button');
+    const taskList = document.querySelector('.task-list');
+
+    // Восстановление списка дел из локального хранилища при загрузке страницы
+    if (localStorage.getItem('tasks')) {
+        taskList.innerHTML = localStorage.getItem('tasks');
+    }
+
+    // Обработчик нажатия на кнопку "Добавить"
+    addButton.addEventListener('click', () => {
+        const taskDescription = taskInput.value;
+        if (taskDescription !== '') {
+            const listItem = document.createElement('li');
+            listItem.classList.add('task-item');
+            listItem.innerHTML = `
+            <span class="task-description">${taskDescription}</span>
+            <button class="delete-button">Удалить</button>
+        `;
+            taskList.appendChild(listItem);
+
+            // Очистка поля ввода
+            taskInput.value = '';
+
+            // Сохранение списка дел в локальное хранилище
+            localStorage.setItem('tasks', taskList.innerHTML);
+        }
+    });
+
+    // Обработчик клика на кнопки "Удалить" в списке дел
+    taskList.addEventListener('click', event => {
+        if (event.target.classList.contains('delete-button')) {
+            const listItem = event.target.closest('li');
+            listItem.parentNode.removeChild(listItem);
+
+            // Обновление списка дел в локальном хранилище
+            localStorage.setItem('tasks', taskList.innerHTML);
+        }
+    });
+
+</script>
+</body>
+</html>

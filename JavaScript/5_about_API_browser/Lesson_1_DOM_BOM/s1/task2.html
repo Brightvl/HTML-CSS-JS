@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Динамическое управление элементами</title>
+    <style>
+        .controls {
+            margin-bottom: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="controls">
+    <button id="add-button">Добавить элемент</button>
+    <button id="remove-button">Удалить элемент</button>
+    <button id="clone-button">Клонировать элемент</button>
+</div>
+<div id="container"></div>
+
+<script>
+    // 1. На странице должны быть кнопки "Добавить элемент", "Удалить элемент" и "Клонировать элемент".
+    // 2. При нажатии на кнопку "Добавить элемент" на страницу добавляется новый квадратный элемент <div> с размерами 100x100 пикселей. Этот элемент должен иметь класс .box и содержать текст, указывающий порядковый номер элемента (1, 2, 3 и так далее).
+    // 3. При нажатии на кнопку "Удалить элемент" удаляется последний добавленный элемент, если таковой имеется.
+    // 4. При нажатии на кнопку "Клонировать элемент" создается копия последнего добавленного элемента и добавляется на страницу.
+    // 5. Элементы могут быть добавлены, удалены и клонированы в любом порядке и в любом количестве.
+    let elementCount = 0;
+
+    document.getElementById('add-button').addEventListener('click', function() {
+        elementCount++;
+        const newElement = document.createElement('div');
+        newElement.className = 'box';
+        newElement.innerText = elementCount;
+        document.getElementById('container').appendChild(newElement);
+    });
+
+    document.getElementById('remove-button').addEventListener('click', function() {
+        const container = document.getElementById('container');
+        if (container.lastChild) {
+            container.removeChild(container.lastChild);
+            elementCount--;
+        }
+    });
+
+    document.getElementById('clone-button').addEventListener('click', function() {
+        const container = document.getElementById('container');
+        if (container.lastChild) {
+            const clone = container.lastChild.cloneNode(true);
+            elementCount++;
+            clone.innerText = elementCount;
+            container.appendChild(clone);
+        }
+    });
+</script>
+</body>
+</html>

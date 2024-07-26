@@ -1,13 +1,73 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HW1</title>
+    <title>Расписание занятий</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .class-card {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-<script src="script.js"></script>
+<div class="container">
+    <h1 class="my-4">Расписание занятий</h1>
+    <div id="classes-container"></div>
+</div>
+
+<script>
+    const classesData = [
+        { "title": "Йога", "time": "08:00", "maxParticipants": 10, "currentParticipants": 5 },
+        { "title": "Пилатес", "time": "10:00", "maxParticipants": 15, "currentParticipants": 15 },
+        { "title": "Зумба", "time": "12:00", "maxParticipants": 20, "currentParticipants": 12 },
+        { "title": "Силовая тренировка", "time": "14:00", "maxParticipants": 10, "currentParticipants": 8 }
+    ];
+
+    function loadClasses() {
+        const container = document.getElementById('classes-container');
+        container.innerHTML = '';
+        classesData.forEach((classData, index) => {
+            const classElement = document.createElement('div');
+            classElement.className = 'class-card card';
+            classElement.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${classData.title}</h5>
+                        <p class="card-text">Время: ${classData.time}</p>
+                        <p class="card-text">Максимальное количество участников: ${classData.maxParticipants}</p>
+                        <p class="card-text">Текущее количество участников: <span id="current-${index}">${classData.currentParticipants}</span></p>
+                        <button class="btn btn-primary" id="join-${index}" ${classData.currentParticipants >= classData.maxParticipants ? 'disabled' : ''}>Записаться</button>
+                        <button class="btn btn-danger" id="cancel-${index}" ${classData.currentParticipants === 0 ? 'disabled' : ''}>Отменить запись</button>
+                    </div>
+                `;
+            container.appendChild(classElement);
+
+            document.getElementById(`join-${index}`).addEventListener('click', () => joinClass(index));
+            document.getElementById(`cancel-${index}`).addEventListener('click', () => cancelClass(index));
+        });
+    }
+
+    function joinClass(index) {
+        if (classesData[index].currentParticipants < classesData[index].maxParticipants) {
+            classesData[index].currentParticipants++;
+            updateClassDisplay(index);
+        }
+    }
+
+    function cancelClass(index) {
+        if (classesData[index].currentParticipants > 0) {
+            classesData[index].currentParticipants--;
+            updateClassDisplay(index);
+        }
+    }
+
+    function updateClassDisplay(index) {
+        document.getElementById(`current-${index}`).innerText = classesData[index].currentParticipants;
+        document.getElementById(`join-${index}`).disabled = classesData[index].currentParticipants >= classesData[index].maxParticipants;
+        document.getElementById(`cancel-${index}`).disabled = classesData[index].currentParticipants === 0;
+    }
+
+    window.onload = loadClasses;
+</script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+[
+  { "title": "Йога", "time": "08:00", "maxParticipants": 10, "currentParticipants": 5 },
+  { "title": "Пилатес", "time": "10:00", "maxParticipants": 15, "currentParticipants": 15 },
+  { "title": "Зумба", "time": "12:00", "maxParticipants": 20, "currentParticipants": 12 },
+  { "title": "Силовая тренировка", "time": "14:00", "maxParticipants": 10, "currentParticipants": 8 }
+]
