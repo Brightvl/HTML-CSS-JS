@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Unsplash Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #image-container {
+            margin: 20px;
+        }
+        #like-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #like-counter {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="image-container">
+    <img id="random-image" src="" alt="Random Image" width="600">
+    <p id="photographer-info"></p>
+    <button id="like-button">Лайк</button>
+    <p id="like-counter">Лайков: 0</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
