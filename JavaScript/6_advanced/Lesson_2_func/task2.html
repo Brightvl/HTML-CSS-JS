@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <style>
+        #reviewContainer {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <label for="reviewInput">Оставьте отзыв:</label>
+    <textarea id="reviewInput" rows="4" cols="50"></textarea>
+    <button id="submitReview">Отправить</button>
+</div>
+<div id="reviewContainer"></div>
+
+<script>
+    const initialData = [
+        {
+            product: "Apple iPhone 13",
+            reviews: [
+                { id: "1", text: "Отличный телефон! Батарея держится долго." },
+                { id: "2", text: "Камера супер, фото выглядят просто потрясающе." },
+            ],
+        },
+        {
+            product: "Samsung Galaxy Z Fold 3",
+            reviews: [{ id: "3", text: "Интересный дизайн, но дорогой." }],
+        },
+        {
+            product: "Sony PlayStation 5",
+            reviews: [{ id: "4", text: "Люблю играть на PS5, графика на высоте." }],
+        },
+    ];
+
+    const reviewInput = document.getElementById("reviewInput");
+    const reviewContainer = document.getElementById("reviewContainer");
+    const submitReview = document.getElementById("submitReview");
+
+    // Функция для добавления отзыва
+    function addReview(text) {
+        if (text.length < 50 || text.length > 500) {
+            throw new Error("Отзыв должен содержать от 50 до 500 символов.");
+        }
+        const reviewElement = document.createElement("div");
+        reviewElement.classList.add("review-item");
+        reviewElement.textContent = text;
+        reviewContainer.appendChild(reviewElement);
+    }
+
+    submitReview.addEventListener("click", () => {
+        try {
+            const reviewText = reviewInput.value.trim();
+            addReview(reviewText);
+            reviewInput.value = ""; // Очистить поле ввода после добавления отзыва
+        } catch (error) {
+            alert(error.message);
+        }
+    });
+
+    function loadInitialData() {
+        initialData.forEach((product) => {
+            product.reviews.forEach((review) => {
+                addReview(review.text);
+            });
+        });
+    }
+
+    loadInitialData();
+
+</script>
+</body>
+</html>
