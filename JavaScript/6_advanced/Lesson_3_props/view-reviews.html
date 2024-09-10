@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы о продуктах</title>
+</head>
+<body>
+<h1>Отзывы о продуктах</h1>
+
+<p>
+    <a href="add-review.html">Добавить новый отзыв</a>
+</p>
+
+<div id="productsList"></div>
+<div id="reviewsContainer"></div>
+
+<script>
+    function loadProducts() {
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || {};
+
+        const productsList = document.getElementById('productsList');
+        productsList.innerHTML = '';
+
+        for (const product in reviews) {
+            const productButton = document.createElement('button');
+            productButton.textContent = product;
+            productButton.addEventListener('click', () => {
+                displayReviews(product);
+            });
+            productsList.appendChild(productButton);
+            productsList.appendChild(document.createElement('br'));
+        }
+    }
+
+    function displayReviews(product) {
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || {};
+        const reviewsContainer = document.getElementById('reviewsContainer');
+        reviewsContainer.innerHTML = ''; // Очищаем контейнер отзывов
+
+        const productTitle = document.createElement('h2');
+        productTitle.textContent = `Отзывы о продукте: ${product}`;
+        reviewsContainer.appendChild(productTitle);
+
+        const reviewsList = document.createElement('ul');
+        reviews[product].forEach((review, index) => {
+            const reviewItem = document.createElement('li');
+            reviewItem.textContent = review;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Удалить';
+            deleteButton.addEventListener('click', () => {
+                deleteReview(product, index);
+            });
+
+            reviewItem.appendChild(deleteButton);
+            reviewsList.appendChild(reviewItem);
+        });
+
+        reviewsContainer.appendChild(reviewsList);
+    }
+
+    function deleteReview(product, index) {
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || {};
+
+        reviews[product].splice(index, 1); // Удаляем отзыв из массива
+
+        if (reviews[product].length === 0) {
+            delete reviews[product];
+        }
+
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+
+        loadProducts(); // Обновляем список продуктов
+        document.getElementById('reviewsContainer').innerHTML = '';
+    }
+
+    loadProducts();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить отзыв</title>
+</head>
+<body>
+<h1>Добавить отзыв о продукте</h1>
+<div>
+    <label for="productName">Название продукта:</label>
+    <input type="text" id="productName" />
+</div>
+<div>
+    <label for="reviewText">Ваш отзыв:</label>
+    <textarea id="reviewText" rows="4" cols="50"></textarea>
+</div>
+<button id="addReviewButton">Добавить отзыв</button>
+
+<p>
+    <a href="view-reviews.html">Перейти к просмотру отзывов</a>
+</p>
+
+<script>
+    document.getElementById('addReviewButton').addEventListener('click', () => {
+        const productName = document.getElementById('productName').value.trim();
+        const reviewText = document.getElementById('reviewText').value.trim();
+
+        if (!productName || !reviewText) {
+            alert('Заполните все поля!');
+            return;
+        }
+
+        let reviews = JSON.parse(localStorage.getItem('reviews')) || {};
+
+        if (!reviews[productName]) {
+            reviews[productName] = [];
+        }
+        reviews[productName].push(reviewText);
+
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+
+        document.getElementById('productName').value = '';
+        document.getElementById('reviewText').value = '';
+
+        alert('Отзыв добавлен!');
+    });
+</script>
+</body>
+</html>
