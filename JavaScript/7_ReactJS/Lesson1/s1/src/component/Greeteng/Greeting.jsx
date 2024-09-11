@@ -1,6 +1,6 @@
 export const Greeting = () => (
     <div>
-        <h1>Привет, React</h1>
+        <h1>Привет</h1>
     </div>
 )
 
