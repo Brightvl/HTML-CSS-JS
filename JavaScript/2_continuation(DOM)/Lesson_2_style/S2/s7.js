@@ -19,7 +19,7 @@
 
 // Задание 2
 // 1. Необходимо с помощью querySelector найти параграф с классом text
-const textElem = document.querySelector('.text');
+const textElem = document.querySelector('.color');
 // 2. Вывести в консоль соседний элемент h2
 console.log(textElem.previousElementSibling)
 // 3. Вывести в консоль родительский элемент content

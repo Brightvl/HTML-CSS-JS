@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.size {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
