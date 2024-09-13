@@ -6,7 +6,7 @@
 import { useState } from "react";
 import styles from './style.module.scss';
 
-export const Comments = ({ title }) => {
+export const TodoList = ({ title }) => {
     const [value, setValue] = useState('');
     const [messages, setMessages] = useState([
         { id: 1, text: "Это первый комментарий" },

@@ -1,4 +1,21 @@
+// S3
 import './App.css'
+import Greeting from "./component/S3/Greeteng/index.js";
+import {Counter} from "./component/S3/Counter/Counter.jsx";
+
+const App = () => (
+    <div className="container">
+        <Greeting name='Ярослав'/>
+        <Counter/>
+    </div>
+)
+
+
+export default App
+
+
+// S2
+/*import './App.css'
 import {Counter} from "./component/S2/Counter/Counter.jsx";
 import {TextInput} from "./component/S2/TextInput/TextInput.jsx";
 import {TodoList} from "./component/S2/TodoList/TodoList.jsx";
@@ -11,13 +28,12 @@ const App = () => (
         <Counter/>
         <TextInput/>
         <TodoList title='Комменатрии'/>
-
         <Timer/>
     </div>
 )
 
 
-export default App
+export default App*/
 
 
 /* S1
