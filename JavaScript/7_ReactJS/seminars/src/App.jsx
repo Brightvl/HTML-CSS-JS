@@ -1,11 +1,18 @@
 import './App.css'
 import {Counter} from "./component/S2/Counter/Counter.jsx";
 import {TextInput} from "./component/S2/TextInput/TextInput.jsx";
+import {TodoList} from "./component/S2/TodoList/TodoList.jsx";
+import {RealtimeClock} from "./component/S2/RealtimeClock/RealtimeClock.jsx";
+import {Timer} from "./component/S2/Timer/Timer.jsx";
 
 const App = () => (
     <div className="container">
+        <RealtimeClock/>
         <Counter/>
         <TextInput/>
+        <TodoList title='Комменатрии'/>
+
+        <Timer/>
     </div>
 )
 
