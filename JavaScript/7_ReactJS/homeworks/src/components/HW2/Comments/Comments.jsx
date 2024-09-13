@@ -20,6 +20,7 @@ export const Comments = ({ title }) => {
 
     const addMessages = () => {
         if (value.trim() === '') {
+            setValue('');
             return;
         }
         const newArr = [...messages, { text: value, id: crypto.randomUUID() }];

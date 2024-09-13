@@ -1,4 +1,20 @@
 import './App.css'
+import {Comments} from "./components/HW2/Comments/Comments.jsx";
+
+
+function App() {
+    return (
+        <div className='container'>
+            <Comments title='Комменатрии'/>
+        </div>
+    )
+}
+
+export default App
+
+
+/*
+import './App.css'
 import {Message} from "./components/Message/Message.jsx";
 import {Banner} from "./components/Banner/Banner.jsx";
 
@@ -16,3 +32,4 @@ function App() {
 }
 
 export default App
+*/
