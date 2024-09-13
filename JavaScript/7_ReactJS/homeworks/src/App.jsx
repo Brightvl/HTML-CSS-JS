@@ -1,3 +1,4 @@
+// hw2
 import './App.css'
 import {Comments} from "./components/HW2/Comments/Comments.jsx";
 
@@ -13,10 +14,10 @@ function App() {
 export default App
 
 
-/*
-import './App.css'
-import {Message} from "./components/Message/Message.jsx";
-import {Banner} from "./components/Banner/Banner.jsx";
+// hw1
+/*import './App.css'
+import {Message} from "./components/HW1/Message/Message.jsx";
+import {Banner} from "./components/HW1/Banner/Banner.jsx";
 
 function App() {
     const text = `Hello`;
@@ -31,5 +32,4 @@ function App() {
   )
 }
 
-export default App
-*/
+export default App*/
