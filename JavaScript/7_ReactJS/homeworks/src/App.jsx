@@ -1,5 +1,18 @@
-// hw2
+// hw3
 import './App.css'
+import {TemperatureConverter} from "./components/HW3/TemperatureConverter/TemperatureConverter.jsx";
+import {TodoList} from "./components/HW3/TodoList/TodoList.jsx";
+
+const App = () => (
+    <div>
+        <TemperatureConverter/>
+        <TodoList/>
+    </div>
+);
+export default App;
+
+// hw2
+/*import './App.css'
 import {Comments} from "./components/HW2/Comments/Comments.jsx";
 
 
@@ -11,7 +24,7 @@ function App() {
     )
 }
 
-export default App
+export default App*/
 
 
 // hw1
