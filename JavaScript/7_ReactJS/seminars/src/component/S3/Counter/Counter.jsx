@@ -6,28 +6,42 @@
 3. Кнопки можно сделать с помощью material ui
 */
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {Button} from "@mui/material";
 
 export const Counter = () => {
     const [count, setCount] = useState(0);
+    const [disabledCounter, setDisabledCounter] = useState(true);
     const upCounter = () => {
         setCount((prevCount) => prevCount + 1)
     }
     const downCounter = () => {
         setCount((prevCount) => prevCount - 1)
     }
+    useEffect(() => {
+        if (count > 0) {
+            setDisabledCounter(false)
+        } else setDisabledCounter(true)
+    }, [count, disabledCounter]);
     const resetCounter = () => {
         setCount(count - 1)
     }
     return (
         <div>
-            <button onClick={downCounter}>
+            <p>Счетчик: {count}</p>
+            <Button
+                variant="outlined"
+                onClick={downCounter}
+                disabled={disabledCounter}
+            >
+
                 Уменьшить
-            </button>
-            {count}
-            <button onClick={upCounter}>
+            </Button>
+            <Button
+                variant="outlined"
+                onClick={upCounter}>
                 Увеличить
-            </button>
+            </Button>
         </div>
 
     )

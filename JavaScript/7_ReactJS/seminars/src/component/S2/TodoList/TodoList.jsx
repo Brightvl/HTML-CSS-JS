@@ -39,7 +39,9 @@ export const TodoList = ({ title }) => {
                 {messages.map((mess) =>
                     <li key={mess.id} className={styles.listItem}>
                         <span className={styles.text}>{mess.text}</span>
-                        <button className={styles.button} onClick={() => removeMessage(mess.id)}>
+                        <button
+                            className={styles.button}
+                            onClick={() => removeMessage(mess.id)}>
                             Удалить
                         </button>
                     </li>

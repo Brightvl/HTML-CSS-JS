@@ -2,11 +2,22 @@
 import './App.css'
 import Greeting from "./component/S3/Greeteng/index.js";
 import {Counter} from "./component/S3/Counter/Counter.jsx";
+import {MessagesList} from "./component/S3/MessagesList/MessagesList.jsx";
+import {TextDisplayForm} from "./component/S3/TextDisplayForm/TextDisplayForm.jsx";
+import {ThemeSwitcher} from "./component/S3/ThemeSwitcher/ThemeSwitcher.jsx";
 
+const msgList = [
+    {id: 1, text: "Hello World!"},
+    {id: 2, text: "Hello World!"},
+    {id: 3, text: "Hello World!"},
+];
 const App = () => (
     <div className="container">
         <Greeting name='Ярослав'/>
         <Counter/>
+        <MessagesList messages={msgList}/>
+        <TextDisplayForm/>
+        <ThemeSwitcher/>
     </div>
 )
 
