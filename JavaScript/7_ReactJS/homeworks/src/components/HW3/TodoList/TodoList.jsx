@@ -19,16 +19,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import style from './style.module.scss'; // Подключите стили, если они вам нужны
 
 export const TodoList = () => {
-    const [task, setTask] = useState("");
+    const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
 
-
     const addTask = () => {
-        if (task.trim() === "") return;
+        if (task.trim() === '') return;
         setTasks([...tasks, task]);
-        setTask("");
+        setTask('');
     };
-
 
     const removeTask = (index) => {
         setTasks(tasks.filter((_, i) => i !== index));
@@ -36,7 +34,7 @@ export const TodoList = () => {
 
     return (
         <div className={style.container}>
-            <div className={style.container}>
+            <div className={style.form}>
                 <TextField
                     label="Новая задача"
                     variant="outlined"
@@ -48,18 +46,23 @@ export const TodoList = () => {
                     variant="contained"
                     color="primary"
                     onClick={addTask}
-                    style={{ marginLeft: '8px' }}
+                    className={style.addButton}
                 >
                     Добавить
                 </Button>
             </div>
-            <List className={style.container}>
+            <List className={style.list}>
                 {tasks.map((task, index) => (
                     <ListItem key={index} className={style.listItem}>
-                        <Card variant="outlined" style={{ width: '100%' }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Card variant="outlined" className={style.card}>
+                            <CardContent className={style.cardContent}>
                                 <Typography variant="body1">{task}</Typography>
-                                <IconButton edge="end" aria-label="delete" onClick={() => removeTask(index)}>
+                                <IconButton
+                                    edge="end"
+                                    aria-label="delete"
+                                    onClick={() => removeTask(index)}
+                                    className={style.deleteButton}
+                                >
                                     <DeleteIcon />
                                 </IconButton>
                             </CardContent>
@@ -70,3 +73,4 @@ export const TodoList = () => {
         </div>
     );
 };
+
