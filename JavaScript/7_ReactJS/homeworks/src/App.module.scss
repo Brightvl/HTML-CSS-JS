@@ -15,3 +15,11 @@ html, body {
   align-items: center;
   height: 100vh;
 }
+
+.link {
+  text-decoration: none;
+  color: tomato;
+}
+.link.active{
+  color: blueviolet;
+}

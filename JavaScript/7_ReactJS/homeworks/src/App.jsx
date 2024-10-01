@@ -1,5 +1,29 @@
+//hw4
+import s from './App.module.scss'
+import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
+import {HomePage} from "./components/HW4/Page/HomePage/HomePage.jsx";
+import {AboutPage} from "./components/HW4/Page/AboutPage/AboutPage.jsx";
+
+const App = () => {
+    const styleActiveLink = ({isActive}) => isActive ? `${s.link} ${s.active}` : s.link
+
+    return (
+        <BrowserRouter>
+            <nav>
+                <NavLink className={styleActiveLink} to="/">Главная страница</NavLink>
+                <NavLink className={styleActiveLink} to="/about">О нас</NavLink>
+            </nav>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
+            </Routes>
+        </BrowserRouter>
+    )
+};
+export default App;
+
 // hw3
-import './App.css'
+/*import './App.module.scss'
 import {TemperatureConverter} from "./components/HW3/TemperatureConverter/TemperatureConverter.jsx";
 import {TodoList} from "./components/HW3/TodoList/TodoList.jsx";
 
@@ -10,7 +34,7 @@ const App = () => (
     </div>
 );
 export default App;
-
+*/
 // hw2
 /*import './App.module.scss'
 import {Comments} from "./components/HW2/Comments/Comments.jsx";
