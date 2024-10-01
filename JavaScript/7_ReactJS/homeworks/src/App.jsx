@@ -12,7 +12,7 @@ const App = () => (
 export default App;
 
 // hw2
-/*import './App.css'
+/*import './App.module.scss'
 import {Comments} from "./components/HW2/Comments/Comments.jsx";
 
 
@@ -28,7 +28,7 @@ export default App*/
 
 
 // hw1
-/*import './App.css'
+/*import './App.module.scss'
 import {Message} from "./components/HW1/Message/Message.jsx";
 import {Banner} from "./components/HW1/Banner/Banner.jsx";
 
