@@ -1,0 +1,34 @@
+.test {
+  background-color: aqua;
+}
+
+.container {
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: tomato;
+}
+
+.active {
+  color: blueviolet;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.light {
+  background-color: aliceblue;
+  color: black;
+}
+
+.dark {
+  color: aliceblue;
+  background-color: black;
+}

@@ -1,12 +1,42 @@
+// S5
+import {useState} from "react";
+import {UserContext} from "./contexts/S5/UserContext.js";
+import {Header} from "./component/S5/Header/Header.jsx";
+import {Footer} from "./component/S5/Footer/Footer.jsx";
+import {Main} from "./component/S5/Main/Main.jsx";
+import {ThemeProvider} from "./contexts/S5/ThemeContext.js";
+
+const App = () => {
+    const [userName, setUserName] = useState("guest");
+    const [theme, setTheme] = useState("light");
+
+    const changeName = () => {
+        setUserName("Bright");
+    }
+    const toggleTheme = () => {
+        setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    }
+
+    return (
+        <ThemeProvider>
+            <UserContext.Provider value={{ username, setUsername }}>
+                <Header />
+                <Main />
+            </UserContext.Provider>
+            <Footer />
+        </ThemeProvider>
+    );
+}
+export default App
 //S4
-import s from './App.module.scss'
+/*import s from './App.module.scss'
 import {Box} from "./component/S4/Box/Box.jsx";
 import {List} from "./component/S4/List/List.jsx";
-import {HomePage} from "./component/S4/Page/HomePage/HomePage.jsx";
+import {HomePage} from "./page/S4/HomePage/HomePage.jsx";
 import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
-import {AboutPage} from "./component/S4/Page/AboutPage/AboutPage.jsx";
-import {ListPage} from "./component/S4/Page/ListPage/ListPage.jsx";
-import {DetailPage} from "./component/S4/Page/DetailPage/DetailPage.jsx";
+import {AboutPage} from "./page/S4/AboutPage/AboutPage.jsx";
+import {ListPage} from "./page/S4/ListPage/ListPage.jsx";
+import {DetailPage} from "./page/S4/DetailPage/DetailPage.jsx";
 
 const arr = ["пункт 1", "пункт 2", "пункт 3"]
 const goods = [
@@ -59,9 +89,7 @@ const App = () => {
         </BrowserRouter>
     )
 }
-
-
-export default App
+export default App*/
 
 // S3
 /*import './App.module.scss'
