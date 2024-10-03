@@ -1,33 +1,45 @@
 // S5
-import {useState} from "react";
-import {UserContext} from "./contexts/S5/UserContext.js";
+import {useEffect, useState} from "react";
 import {Header} from "./component/S5/Header/Header.jsx";
 import {Footer} from "./component/S5/Footer/Footer.jsx";
-import {Main} from "./component/S5/Main/Main.jsx";
-import {ThemeProvider} from "./contexts/S5/ThemeContext.js";
+import {MainWithLoading} from "./component/S5/Main/Main.jsx";
+
+import './App.scss'
+
+
+import {UserContext} from "./contexts/S5/UserContext.js";
+import {ThemeProvider} from "./contexts/S5/ThemeContext.jsx";
+import {Profile} from "./component/S5/Profile/Profile.jsx";
+import {Provider} from "react-redux";
+import {store} from "./store/store.js";
 
 const App = () => {
     const [userName, setUserName] = useState("guest");
-    const [theme, setTheme] = useState("light");
-
-    const changeName = () => {
-        setUserName("Bright");
-    }
-    const toggleTheme = () => {
-        setTheme((prev) => (prev === "light" ? "dark" : "light"));
-    }
-
+    const [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState('');
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+            setData("HOC")
+        }, 2000)
+    }, [setIsLoading]);
     return (
-        <ThemeProvider>
-            <UserContext.Provider value={{ username, setUsername }}>
-                <Header />
-                <Main />
-            </UserContext.Provider>
-            <Footer />
-        </ThemeProvider>
+        // 1 вариант <ThemeProvider>
+        // 2 вариант <UserContext.Provider value={{ userName, setUserName }}>
+        <Provider store={store}>
+            <ThemeProvider>
+                <UserContext.Provider value={{userName, setUserName}}>
+                    <Header/>
+                    <Profile/>
+                    <MainWithLoading data={data} isLoading={isLoading}/>
+                </UserContext.Provider>
+                <Footer/>
+            </ThemeProvider>
+        </Provider>
     );
 }
 export default App
+
 //S4
 /*import s from './App.module.scss'
 import {Box} from "./component/S4/Box/Box.jsx";

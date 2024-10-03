@@ -1,7 +1,8 @@
-import {useTheme} from "../../../contexts/S5/ThemeContext.js";
-
+import {useTheme} from "../../../contexts/S5/ThemeContext.jsx";
 
 export const Footer = () => {
     const {theme} = useTheme();
-    return <footer className={theme}>{new Date().getFullYear()}</footer>;
+    return <footer className={theme}>
+        {new Date().getFullYear()}
+    </footer>;
 };
